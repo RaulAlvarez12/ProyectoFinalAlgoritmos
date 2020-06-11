@@ -35,8 +35,20 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/probandoSonido123.o
+	${OBJECTDIR}/Aerolinea.o \
+	${OBJECTDIR}/AerolineaData.o \
+	${OBJECTDIR}/Avion.o \
+	${OBJECTDIR}/Ciudad.o \
+	${OBJECTDIR}/Horario.o \
+	${OBJECTDIR}/Itinerario.o \
+	${OBJECTDIR}/ListaEnlazadaCircularDoble.o \
+	${OBJECTDIR}/Tiquete.o \
+	${OBJECTDIR}/Usuario.o \
+	${OBJECTDIR}/VentanaComprarTiquete.o \
+	${OBJECTDIR}/VentanaEscogerAerolinea.o \
+	${OBJECTDIR}/VentanaPrincipal.o \
+	${OBJECTDIR}/Vuelo.o \
+	${OBJECTDIR}/main.o
 
 
 # C Compiler Flags
@@ -63,15 +75,75 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/neotravel: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/neotravel ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Aerolinea.o: Aerolinea.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Aerolinea.o Aerolinea.cpp
+
+${OBJECTDIR}/AerolineaData.o: AerolineaData.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AerolineaData.o AerolineaData.cpp
+
+${OBJECTDIR}/Avion.o: Avion.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Avion.o Avion.cpp
+
+${OBJECTDIR}/Ciudad.o: Ciudad.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ciudad.o Ciudad.cpp
+
+${OBJECTDIR}/Horario.o: Horario.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Horario.o Horario.cpp
+
+${OBJECTDIR}/Itinerario.o: Itinerario.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Itinerario.o Itinerario.cpp
+
+${OBJECTDIR}/ListaEnlazadaCircularDoble.o: ListaEnlazadaCircularDoble.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ListaEnlazadaCircularDoble.o ListaEnlazadaCircularDoble.cpp
+
+${OBJECTDIR}/Tiquete.o: Tiquete.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Tiquete.o Tiquete.cpp
+
+${OBJECTDIR}/Usuario.o: Usuario.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Usuario.o Usuario.cpp
+
+${OBJECTDIR}/VentanaComprarTiquete.o: VentanaComprarTiquete.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaComprarTiquete.o VentanaComprarTiquete.cpp
+
+${OBJECTDIR}/VentanaEscogerAerolinea.o: VentanaEscogerAerolinea.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaEscogerAerolinea.o VentanaEscogerAerolinea.cpp
+
+${OBJECTDIR}/VentanaPrincipal.o: VentanaPrincipal.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaPrincipal.o VentanaPrincipal.cpp
+
+${OBJECTDIR}/Vuelo.o: Vuelo.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vuelo.o Vuelo.cpp
+
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
-
-${OBJECTDIR}/probandoSonido123.o: probandoSonido123.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/probandoSonido123.o probandoSonido123.cpp
 
 # Subprojects
 .build-subprojects:
