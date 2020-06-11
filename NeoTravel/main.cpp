@@ -6,6 +6,8 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <gtkmm.h>
+#include "VentanaPrincipal.h"
 
 using namespace std;
 
@@ -13,7 +15,12 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+  Glib::RefPtr<Gtk::Application> app= 
+        Gtk::Application::create(argc, argv, "flag2");
     
-    cout << "Prueba git hub" << endl;
-    return 0;
+    VentanaPrincipal ventana;
+    ventana.set_title("NEO Travel");
+    
+    return app->run(ventana);
+    
 }//finMain
