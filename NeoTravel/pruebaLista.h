@@ -11,15 +11,15 @@
  * Created on 7 de junio de 2020, 05:51 PM
  */
 
-#ifndef PRUEBA_H
-#define PRUEBA_H
+#ifndef PRUEBALISTA_H
+#define PRUEBALISTA_H
 
 #include "AerolineaData.h"
 #include <iostream>
 
 
 using namespace std;
-class prueba{
+class pruebaLista{
 public:
      prueba(){
         

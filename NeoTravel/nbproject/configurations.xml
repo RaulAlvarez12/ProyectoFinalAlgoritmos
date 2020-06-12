@@ -6,12 +6,17 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.h</itemPath>
-        <itemPath>prueba.h</itemPath>
+        <itemPath>ItinerarioData.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
+        <logicalFolder name="f1" displayName="Cola" projectFiles="true">
+          <itemPath>Cola.h</itemPath>
+          <itemPath>ColaException.h</itemPath>
+        </logicalFolder>
         <itemPath>Aerolinea.h</itemPath>
         <itemPath>Avion.h</itemPath>
         <itemPath>Ciudad.h</itemPath>
+        <itemPath>Horario.h</itemPath>
         <itemPath>Itinerario.h</itemPath>
         <itemPath>ListaEnlazadaCircularDoble.h</itemPath>
         <itemPath>Tiquete.h</itemPath>
@@ -23,6 +28,10 @@
         <itemPath>VentanaEscogerAerolinea.h</itemPath>
         <itemPath>VentanaPrincipal.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="Pruebas" projectFiles="true">
+        <itemPath>PruebaCola.h</itemPath>
+        <itemPath>pruebaLista.h</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -33,13 +42,17 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.cpp</itemPath>
+        <itemPath>ItinerarioData.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
+        <logicalFolder name="f1" displayName="Cola" projectFiles="true">
+          <itemPath>Cola.cpp</itemPath>
+          <itemPath>ColaException.cpp</itemPath>
+        </logicalFolder>
         <itemPath>Aerolinea.cpp</itemPath>
         <itemPath>Avion.cpp</itemPath>
         <itemPath>Ciudad.cpp</itemPath>
         <itemPath>Horario.cpp</itemPath>
-        <itemPath>Horario.h</itemPath>
         <itemPath>Itinerario.cpp</itemPath>
         <itemPath>ListaEnlazadaCircularDoble.cpp</itemPath>
         <itemPath>Tiquete.cpp</itemPath>
@@ -97,6 +110,14 @@
       </item>
       <item path="Ciudad.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Cola.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cola.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ColaException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ColaException.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -105,9 +126,15 @@
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ListaEnlazadaCircularDoble.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PruebaCola.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tiquete.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -135,7 +162,7 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="prueba.h" ex="false" tool="3" flavor2="0">
+      <item path="pruebaLista.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -174,6 +201,14 @@
       </item>
       <item path="Ciudad.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Cola.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cola.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ColaException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ColaException.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -182,9 +217,15 @@
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ListaEnlazadaCircularDoble.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PruebaCola.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tiquete.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -212,7 +253,7 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="prueba.h" ex="false" tool="3" flavor2="0">
+      <item path="pruebaLista.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
