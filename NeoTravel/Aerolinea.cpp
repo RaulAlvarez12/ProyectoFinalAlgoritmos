@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Aerolinea.cpp
  * Author: geraldi
@@ -14,10 +8,10 @@
 #include "Aerolinea.h"
 
 Aerolinea::Aerolinea(string nombre) {
-    this->nombreCiudad=nombre;
+    this->nombreAerolinea=nombre;
 }
 string Aerolinea::getNombre(){
-    return this->nombreCiudad;
+    return this->nombreAerolinea;
 }
 Aerolinea::Aerolinea(const Aerolinea& orig) {
 }

@@ -1,4 +1,3 @@
-
 /* 
  * File:   ItinerarioData.h
  * Author: alsov
@@ -40,4 +39,3 @@ protected:
 };
 
 #endif /* ITINERARIODATA_H */
-
