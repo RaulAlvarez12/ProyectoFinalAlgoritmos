@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
         Gtk::Application::create(argc, argv, "flag2");
     
     VentanaPrincipal ventana;
-    ventana.set_title("NEO Travel");
+    ventana.set_title("NeoTravel");
     
     return app->run(ventana);
     

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   VentanaPrincipal.h
  * Author: geraldi
@@ -18,6 +12,7 @@
 #include <gtkmm.h>
 
 #include "VentanaEscogerAerolinea.h"
+#include "VentanaItinerario.h"
 
 class VentanaPrincipal : public Gtk::Window {
 public:
@@ -25,20 +20,27 @@ public:
     virtual ~VentanaPrincipal();
 private:
     void init();
+    
     void aboutWinClose();
+    void aboutWinCloseVentanaItinerarios();
+    
     void abrirVentanaEscogerAerolinea();
+    void abrirVentanaItinerario();
 
-
-
+    //Atributos
     VentanaEscogerAerolinea* ventanaescoger;
+    VentanaItinerario* ventanaItinerario;
+    
     Gtk::MenuBar menuBar;
     Gtk::MenuItem menuArchivo;
+    Gtk::MenuItem menuItinerario;//item del menu bar
     Gtk::Menu subMenuArchivo; //abre el contenedor submenu
+    Gtk::Menu subMenuItinerario;
     Gtk::ImageMenuItem menuEscogerAerolinea;
+    Gtk::ImageMenuItem menuItinerarios;//Abre la ventana de itinerarios
 
     Gtk::Fixed fixed; // contenedor
 
 };
 
 #endif /* VENTANAPRINCIPAL_H */
-
