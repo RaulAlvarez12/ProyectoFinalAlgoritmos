@@ -6,7 +6,7 @@
 
 /* 
  * File:   Itinerario.cpp
- * Author: geraldi
+ * Author: alsov
  * 
  * Created on 11 de junio de 2020, 01:51 PM
  */
@@ -16,9 +16,17 @@
 Itinerario::Itinerario() {
 }
 
-Itinerario::Itinerario(const Itinerario& orig) {
-}
-
 Itinerario::~Itinerario() {
 }
 
+vector<Cola*> Itinerario::GetColas() {
+
+    return this->colasPrioridad;
+
+}
+
+void Itinerario::agregaCola(Cola* cola) {
+
+    this->colasPrioridad.push_back(cola);
+
+}

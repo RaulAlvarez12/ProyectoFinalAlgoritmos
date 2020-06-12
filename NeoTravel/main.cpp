@@ -8,6 +8,7 @@
 #include <iostream>
 #include <gtkmm.h>
 #include "VentanaPrincipal.h"
+#include "PruebaCola.h"
 
 using namespace std;
 
@@ -22,5 +23,8 @@ int main(int argc, char** argv) {
     ventana.set_title("NeoTravel");
     
     return app->run(ventana);
-    
+    PruebaCola prueba;
+
+    prueba.test();
+
 }//finMain
