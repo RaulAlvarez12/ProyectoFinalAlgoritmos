@@ -23,8 +23,5 @@ int main(int argc, char** argv) {
     ventana.set_title("NeoTravel");
     
     return app->run(ventana);
-    PruebaCola prueba;
-
-    prueba.test();
 
 }//finMain

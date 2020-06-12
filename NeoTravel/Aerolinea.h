@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Aerolinea.h
  * Author: geraldi
@@ -17,18 +11,23 @@
 #include <string>
 #include <sstream>
 
+#include "Vuelo.h"
+
 using namespace std;
 class Aerolinea {
 public:
     Aerolinea(string nombre);
     Aerolinea(const Aerolinea& orig);
     virtual ~Aerolinea();
-    
     string getNombre();
+    vector<Vuelo*> getVuelos();
+    void setVuelo(Vuelo* vuelo);
+    
 private:
-    string nombreCiudad;
+    string nombreAerolinea;
+    
+    vector<Vuelo*> vuelos;
 
 };
 
 #endif /* AEROLINEA_H */
-

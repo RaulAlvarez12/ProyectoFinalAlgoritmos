@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Itinerario.h
  * Author: alsov
@@ -16,6 +10,8 @@
 
 #include <vector>
 #include "Cola.h"
+
+using namespace std;
 
 class Itinerario {
 public:
@@ -32,17 +28,25 @@ public:
     //void SetCola(Cola* cola);
     void agregaCola(Cola* cola); // agrega una nueva cola al vector
 
-    vector<Cola*> colasPrioridad;
+    vector<Cola*> colasPrioridad; //Tiene todos los horarios, en otras palabras es el itinerario del vuelo
+    
+    //Metodos del Data
+    string obtenerStringHorario(int indice); // muestra el string ordenado de la cola en el indice que le indique 
+    vector<Cola*> obtenerItinerario();
+    void agregarItinerario();
     
 private:
 
     //    int salida;
     //    int llegada;
+    
 protected:
-
-
-
+    
+    Cola* cola1;
+    Cola* cola2;
+    Cola* cola3;
+    Cola* cola4;
+    Cola* cola5;
 };
 
 #endif /* ITINERARIO_H */
-

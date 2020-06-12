@@ -70,7 +70,7 @@ void VentanaItinerario::onButtonClickedDerAerolinea(){
 }//onButtonClickedDerAerolinea
 
 void VentanaItinerario::onButtonClickedIzqVuelo(){
-    
+    //aerolineaActual->getVuelos();
 }//onButtonClickedIzqVuelo
 
 void VentanaItinerario::onButtonClickedDerVuelo(){
