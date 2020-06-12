@@ -26,6 +26,7 @@
       <logicalFolder name="f3" displayName="GUI" projectFiles="true">
         <itemPath>VentanaComprarTiquete.h</itemPath>
         <itemPath>VentanaEscogerAerolinea.h</itemPath>
+        <itemPath>VentanaItinerario.h</itemPath>
         <itemPath>VentanaPrincipal.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Pruebas" projectFiles="true">
@@ -62,6 +63,7 @@
       <logicalFolder name="f3" displayName="GUI" projectFiles="true">
         <itemPath>VentanaComprarTiquete.cpp</itemPath>
         <itemPath>VentanaEscogerAerolinea.cpp</itemPath>
+        <itemPath>VentanaItinerario.cpp</itemPath>
         <itemPath>VentanaPrincipal.cpp</itemPath>
       </logicalFolder>
       <itemPath>main.cpp</itemPath>
@@ -151,6 +153,10 @@
       <item path="VentanaEscogerAerolinea.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaEscogerAerolinea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VentanaItinerario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VentanaItinerario.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="VentanaPrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -242,6 +248,10 @@
       <item path="VentanaEscogerAerolinea.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaEscogerAerolinea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VentanaItinerario.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VentanaItinerario.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="VentanaPrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
