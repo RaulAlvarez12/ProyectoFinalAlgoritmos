@@ -49,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Usuario.o \
 	${OBJECTDIR}/VentanaComprarTiquete.o \
 	${OBJECTDIR}/VentanaEscogerAerolinea.o \
+	${OBJECTDIR}/VentanaHorarios.o \
 	${OBJECTDIR}/VentanaItinerario.o \
 	${OBJECTDIR}/VentanaPrincipal.o \
 	${OBJECTDIR}/Vuelo.o \
@@ -148,6 +149,11 @@ ${OBJECTDIR}/VentanaEscogerAerolinea.o: VentanaEscogerAerolinea.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaEscogerAerolinea.o VentanaEscogerAerolinea.cpp
+
+${OBJECTDIR}/VentanaHorarios.o: VentanaHorarios.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaHorarios.o VentanaHorarios.cpp
 
 ${OBJECTDIR}/VentanaItinerario.o: VentanaItinerario.cpp
 	${MKDIR} -p ${OBJECTDIR}

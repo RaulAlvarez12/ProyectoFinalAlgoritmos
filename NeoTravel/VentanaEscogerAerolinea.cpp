@@ -24,7 +24,6 @@ VentanaEscogerAerolinea::VentanaEscogerAerolinea() {
 
     init();
     this->show_all_children();
-    aerolineaData->mostrar();
 }
 
 VentanaEscogerAerolinea::~VentanaEscogerAerolinea() {
