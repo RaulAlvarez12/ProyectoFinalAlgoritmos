@@ -58,7 +58,6 @@
         <itemPath>Ciudad.cpp</itemPath>
         <itemPath>Horario.cpp</itemPath>
         <itemPath>Itinerario.cpp</itemPath>
-        <itemPath>ListaEnlazadaCircularDoble.cpp</itemPath>
         <itemPath>Tiquete.cpp</itemPath>
         <itemPath>Usuario.cpp</itemPath>
         <itemPath>Vuelo.cpp</itemPath>
@@ -137,8 +136,6 @@
       <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ListaEnlazadaCircularDoble.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -236,8 +233,6 @@
       <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ListaEnlazadaCircularDoble.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>

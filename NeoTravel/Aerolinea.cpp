@@ -19,3 +19,9 @@ Aerolinea::Aerolinea(const Aerolinea& orig) {
 Aerolinea::~Aerolinea() {
 }
 
+string Aerolinea::toString() {
+    stringstream s;
+        s<<"Nombre: "<<this->nombreAerolinea;
+        return s.str();
+}
+
