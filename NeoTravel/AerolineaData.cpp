@@ -14,28 +14,34 @@
 #include "AerolineaData.h"
 
 AerolineaData::AerolineaData() {
-    ListaAerolineas = new ListaEnlazadaCircularDoble();
+    ListaAerolineas = new ListaEnlazadaCircularDoble<Aerolinea>;
     Aerolinea *a1 = new Aerolinea("Copa");
     ListaAerolineas->insertar(a1);
-    
     Aerolinea *a2 = new Aerolinea("Emirates");
     ListaAerolineas->insertar(a2);
-    
-    Aerolinea *a3 = new Aerolinea("Flys");
-    ListaAerolineas->insertar(a3);
     Aerolinea *a4 = new Aerolinea("American");
     ListaAerolineas->insertar(a4);
+    Aerolinea *a5 = new Aerolinea("Qatar");
+    ListaAerolineas->insertar(a5);
+
+    Aerolinea *a3 = new Aerolinea("Avianca");
+    ListaAerolineas->insertar(a3);
+
 }
 
-Aerolinea* AerolineaData::obtenerSiguiente(Aerolinea* aerolinea){
+Aerolinea* AerolineaData::obtenerSiguiente(Aerolinea* aerolinea) {
     return ListaAerolineas->obtenerSiguiente(aerolinea);
 }
-Aerolinea* AerolineaData::obtenerAnterior(Aerolinea* aerolinea){
+
+Aerolinea* AerolineaData::obtenerAnterior(Aerolinea* aerolinea) {
     return ListaAerolineas->obtenerAnterior(aerolinea);
 }
+
 void AerolineaData::mostrar() {
     this->ListaAerolineas->mostrarValoresLista();
 }
+
+
 
 
 //AerolineaData* AerolineaData::getInstance(){
@@ -47,15 +53,19 @@ void AerolineaData::mostrar() {
 //        return instance;
 //    
 //}
-void AerolineaData::agregarAerolinea(Aerolinea* aerolinea){
+
+void AerolineaData::agregarAerolinea(Aerolinea* aerolinea) {
     ListaAerolineas->insertar(aerolinea);
 }
-ListaEnlazadaCircularDoble* AerolineaData::obtenerListaDeAerolineas(){
+
+ListaEnlazadaCircularDoble<Aerolinea>* AerolineaData::obtenerListaDeAerolineas() {
     return ListaAerolineas;
 }
-Aerolinea* AerolineaData::firstInList(){
+
+Aerolinea* AerolineaData::firstInList() {
     return ListaAerolineas->firstInlist();
 }
+
 AerolineaData::~AerolineaData() {
 }
 

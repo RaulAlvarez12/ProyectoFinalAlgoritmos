@@ -22,7 +22,7 @@ public:
     string getNombre();
     vector<Vuelo*> getVuelos();
     void setVuelo(Vuelo* vuelo);
-    
+    string toString();
 private:
     string nombreAerolinea;
     

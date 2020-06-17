@@ -265,7 +265,7 @@ void Cola::definePrioridad() {
 
         switch (recorrido->salidaVuelo) {
 
-                cout << "entra al switch" << endl;
+                //cout << "entra al switch" << endl;
 
             case 1:
                 recorrido->prioridad = 1;

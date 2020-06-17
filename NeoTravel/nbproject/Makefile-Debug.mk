@@ -44,7 +44,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Horario.o \
 	${OBJECTDIR}/Itinerario.o \
 	${OBJECTDIR}/ItinerarioData.o \
-	${OBJECTDIR}/ListaEnlazadaCircularDoble.o \
 	${OBJECTDIR}/Tiquete.o \
 	${OBJECTDIR}/Usuario.o \
 	${OBJECTDIR}/VentanaComprarTiquete.o \
@@ -124,11 +123,6 @@ ${OBJECTDIR}/ItinerarioData.o: ItinerarioData.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ItinerarioData.o ItinerarioData.cpp
-
-${OBJECTDIR}/ListaEnlazadaCircularDoble.o: ListaEnlazadaCircularDoble.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ListaEnlazadaCircularDoble.o ListaEnlazadaCircularDoble.cpp
 
 ${OBJECTDIR}/Tiquete.o: Tiquete.cpp
 	${MKDIR} -p ${OBJECTDIR}

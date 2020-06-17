@@ -24,7 +24,7 @@ class AerolineaData {
 public:
    static AerolineaData* getInstance();
    void agregarAerolinea(Aerolinea* aerolinea);
-   ListaEnlazadaCircularDoble* obtenerListaDeAerolineas();
+   ListaEnlazadaCircularDoble<Aerolinea>* obtenerListaDeAerolineas();
    void mostrar();
     virtual ~AerolineaData();
     AerolineaData();
@@ -34,7 +34,7 @@ public:
 private:
      
     static AerolineaData* instance;
-    ListaEnlazadaCircularDoble* ListaAerolineas;
+    ListaEnlazadaCircularDoble<Aerolinea>* ListaAerolineas= new ListaEnlazadaCircularDoble<Aerolinea>;
     
 protected:
  
