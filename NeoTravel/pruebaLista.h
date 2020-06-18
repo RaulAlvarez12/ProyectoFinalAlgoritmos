@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   prueba.h
  * Author: geraldi
@@ -17,31 +11,28 @@
 #include "AerolineaData.h"
 #include <iostream>
 
-
 using namespace std;
-class pruebaLista{
+
+class pruebaLista {
 public:
-     prueba(){
-        
-//    Aerolinea* a1 = new Aerolinea("nombre");
-//    ad->getInstance()->agregarAerolinea(a1);
-         
-//         ad = new AerolineaData();
-    ad->mostrar();
-    ListaEnlazadaCircularDoble* test = ad->obtenerListaDeAerolineas();
-    cout<<"\n\n está vacia:"<<test->isEmpty()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->elemento->getNombre()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->sgte->elemento->getNombre()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->elemento->getNombre()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->elemento->getNombre()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->sgte->elemento->getNombre()<<endl;
-    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->sgte->sgte->elemento->getNombre()<<endl;
-    
-    
-}
+
+    prueba() {
+
+        //    Aerolinea* a1 = new Aerolinea("nombre");
+        //    ad->getInstance()->agregarAerolinea(a1);
+
+        //         ad = new AerolineaData();
+        ad->mostrar();
+        ListaEnlazadaCircularDoble* test = ad->obtenerListaDeAerolineas();
+        cout << "\n\n está vacia:" << test->isEmpty() << endl;
+        //    cout<<"\n Elemento:"<<test->inicio->elemento->getNombre()<<endl;
+        //    cout<<"\n Elemento:"<<test->inicio->sgte->elemento->getNombre()<<endl;
+        //    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->elemento->getNombre()<<endl;
+        //    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->elemento->getNombre()<<endl;
+        //    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->sgte->elemento->getNombre()<<endl;
+        //    cout<<"\n Elemento:"<<test->inicio->sgte->sgte->sgte->sgte->sgte->elemento->getNombre()<<endl;
+    }//prueba
     AerolineaData* ad;
 };
 
-
 #endif /* PRUEBA_H */
-

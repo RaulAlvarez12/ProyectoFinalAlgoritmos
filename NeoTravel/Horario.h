@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Horario.h
  * Author: geraldi
@@ -14,23 +8,24 @@
 #ifndef HORARIO_H
 #define HORARIO_H
 
+#include <string.h>
 #include "Avion.h"
 
+using namespace std;
 
 class Horario {
 public:
-    Horario(Avion* avion,int espacios);
-    Horario(const Horario& orig);
+    Horario(int horaSalida, int horaLlegada);
     virtual ~Horario();
-    Avion* getAvion();
-    void setAvion(Avion* avion);
-    int getEspacios();
-    void setEspacios(int espacios);
-    
+    int getHoraSalida();
+    void setHoraSalida(int salida);
+    int getHoraLlegada();
+    void setHoraLlegada(int llegada);
+    string toString();
+
 private:
-    Avion* avion;
-    int espacios;
+    int horaSalida;
+    int horaLlegada;
 };
 
 #endif /* HORARIO_H */
-

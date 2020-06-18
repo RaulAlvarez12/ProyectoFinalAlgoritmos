@@ -40,10 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Avion.o \
 	${OBJECTDIR}/Ciudad.o \
 	${OBJECTDIR}/Cola.o \
-	${OBJECTDIR}/ColaException.o \
 	${OBJECTDIR}/Horario.o \
 	${OBJECTDIR}/Itinerario.o \
-	${OBJECTDIR}/ItinerarioData.o \
 	${OBJECTDIR}/Tiquete.o \
 	${OBJECTDIR}/Usuario.o \
 	${OBJECTDIR}/VentanaComprarTiquete.o \
@@ -104,11 +102,6 @@ ${OBJECTDIR}/Cola.o: Cola.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Cola.o Cola.cpp
 
-${OBJECTDIR}/ColaException.o: ColaException.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ColaException.o ColaException.cpp
-
 ${OBJECTDIR}/Horario.o: Horario.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -118,11 +111,6 @@ ${OBJECTDIR}/Itinerario.o: Itinerario.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Itinerario.o Itinerario.cpp
-
-${OBJECTDIR}/ItinerarioData.o: ItinerarioData.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ItinerarioData.o ItinerarioData.cpp
 
 ${OBJECTDIR}/Tiquete.o: Tiquete.cpp
 	${MKDIR} -p ${OBJECTDIR}

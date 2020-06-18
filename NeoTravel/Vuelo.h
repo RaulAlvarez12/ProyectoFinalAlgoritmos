@@ -8,28 +8,29 @@
 #ifndef VUELO_H
 #define VUELO_H
 
+#include <string.h>
 #include "Itinerario.h"
 #include "Ciudad.h"
 
+using namespace std;
 
 class Vuelo {
 public:
-    Vuelo(Itinerario* itinerario,Ciudad* ciudadOrigen,Ciudad* ciudadDestino);
-    Vuelo(const Vuelo& orig);
+    Vuelo(Itinerario* itinerario, Ciudad* ciudadOrigen, Ciudad* ciudadDestino);
+    Vuelo();
     virtual ~Vuelo();
     Itinerario* getItinerario();
-    void setItinerario( Itinerario* itinerario);
+    void setItinerario(Itinerario* itinerario);
     Ciudad* getCiudadOrigen();
     void setCiudadOrigen(Ciudad* ciudadOrigen);
     Ciudad* getciudadDestino();
     void setciudadDestino(Ciudad* ciudadDestino);
-    
-    
+    string toString();
+
 private:
     Itinerario* itinerario;
     Ciudad* ciudadOrigen;
     Ciudad* ciudadDestino;
-    
 };
 
 #endif /* VUELO_H */

@@ -9,25 +9,22 @@
 #include "Ciudad.h"
 
 Ciudad::Ciudad(string nombre) {
-    this->nombre=nombre;
-}
-
-Ciudad::Ciudad(const Ciudad& orig) {
+    this->nombre = nombre;
 }
 
 Ciudad::~Ciudad() {
 }
 
-string Ciudad::getNombre(){
+string Ciudad::getNombre() {
     return this->nombre;
 }
 
-void Ciudad::setNombre(string nombre){
-    this->nombre=nombre;
+void Ciudad::setNombre(string nombre) {
+    this->nombre = nombre;
 }
 
-string Ciudad::toString(){
+string Ciudad::toString() {
     stringstream s;
-        s<<"\nNombre de la ciudad: "<<this->nombre;
-        return s.str();
+    s << "\nNombre de la ciudad: " << this->nombre;
+    return s.str();
 }

@@ -8,74 +8,30 @@
 #include "Itinerario.h"
 
 Itinerario::Itinerario() {
-    cola1 = new Cola();
-    cola2 = new Cola();
-    cola3 = new Cola();
+    this->colaPrioridad = new Cola();
+    this->avion = new Avion();
+}
 
-    cola1->encolar(8, 13);
-    cola1->encolar(22, 24);
-    cola1->encolar(18, 21);
-
-    cola2->encolar(4, 7);
-    cola2->encolar(13, 15);
-    cola2->encolar(1, 3);
-
-    cola3->encolar(5, 8);
-    cola3->encolar(12, 14);
-    cola3->encolar(19, 22);
-
-    //    cola1->definePrioridad();
-    //    cola2->definePrioridad();
-    //    cola3->definePrioridad();
-    //  cola4->definePrioridad();
-//
-//          itinerario->colasPrioridad.push_back(cola1);
-//         itinerario->colasPrioridad.push_back(cola2);
-//         itinerario->colasPrioridad.push_back(cola3);
-
-    this->agregaCola(cola1);
-    this->agregaCola(cola2);
-    this->agregaCola(cola3);
+Itinerario::Itinerario(Avion* avion, Cola* colaPrioridad) {
+    this->colaPrioridad = colaPrioridad;
+    this->avion = avion;
 }
 
 Itinerario::~Itinerario() {
 }
 
-vector<Cola*> Itinerario::GetColas() {
-
-    return this->colasPrioridad;
-
+Avion* Itinerario::getAvion() {
+    return this->avion;
 }
 
-void Itinerario::agregaCola(Cola* cola) {
-
-    this->colasPrioridad.push_back(cola);
-
+void Itinerario::setAvion(Avion* avion) {
+    this->avion = avion;
 }
 
-//*******************Metodos del Data*****************************
-vector<Cola*> Itinerario::obtenerItinerario() {
-
-    this->GetColas();
-
+Cola* Itinerario::getColaPrioridad() {
+    return this->colaPrioridad;
 }
 
-string Itinerario::obtenerStringHorario(int indice) {
-
-    //cola->ordenarPrioridad();
-
-    //   return cola->toString();
-    for (int i = 0; i < this->colasPrioridad.size(); i++) {
-
-        if (i == indice) {
-
-            this->colasPrioridad[i]->ordenarPrioridad();
-
-            return this->colasPrioridad[i]->toString();
-
-        }
-
-    }
-
+void Itinerario::setColaPrioridad(Cola* cola) {
+    this->colaPrioridad = cola;
 }
-

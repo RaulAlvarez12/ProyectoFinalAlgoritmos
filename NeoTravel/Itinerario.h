@@ -8,45 +8,24 @@
 #ifndef ITINERARIO_H
 #define ITINERARIO_H
 
-#include <vector>
 #include "Cola.h"
+#include "Avion.h"
 
 using namespace std;
 
 class Itinerario {
 public:
     Itinerario();
-    // Itinerario(int salida, int llegada);
-  //  Itinerario(const Itinerario& orig);
+    Itinerario(Avion* avion, Cola* colaPrioridad);
     virtual ~Itinerario();
+    Cola* getColaPrioridad();
+    void setColaPrioridad(Cola* cola);
+    Avion* getAvion();
+    void setAvion(Avion* avion);
 
-    //  int GetSalida();
-    // void SetSalida(int salida);
-    //  int GetLlegada();
-    //  void SetLlegada(int llegada);
-    vector<Cola*> GetColas();
-    //void SetCola(Cola* cola);
-    void agregaCola(Cola* cola); // agrega una nueva cola al vector
-
-    vector<Cola*> colasPrioridad; //Tiene todos los horarios, en otras palabras es el itinerario del vuelo
-    
-    //Metodos del Data
-    string obtenerStringHorario(int indice); // muestra el string ordenado de la cola en el indice que le indique 
-    vector<Cola*> obtenerItinerario();
-    void agregarItinerario();
-    
 private:
-
-    //    int salida;
-    //    int llegada;
-    
-protected:
-    
-    Cola* cola1;
-    Cola* cola2;
-    Cola* cola3;
-    Cola* cola4;
-    Cola* cola5;
+    Avion* avion;
+    Cola* colaPrioridad;
 };
 
 #endif /* ITINERARIO_H */

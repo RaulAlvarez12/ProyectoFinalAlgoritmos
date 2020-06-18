@@ -6,12 +6,10 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.h</itemPath>
-        <itemPath>ItinerarioData.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
           <itemPath>Cola.h</itemPath>
-          <itemPath>ColaException.h</itemPath>
         </logicalFolder>
         <itemPath>Aerolinea.h</itemPath>
         <itemPath>Avion.h</itemPath>
@@ -46,12 +44,10 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.cpp</itemPath>
-        <itemPath>ItinerarioData.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
           <itemPath>Cola.cpp</itemPath>
-          <itemPath>ColaException.cpp</itemPath>
         </logicalFolder>
         <itemPath>Aerolinea.cpp</itemPath>
         <itemPath>Avion.cpp</itemPath>
@@ -121,10 +117,6 @@
       </item>
       <item path="Cola.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ColaException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ColaException.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -132,10 +124,6 @@
       <item path="Itinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -218,10 +206,6 @@
       </item>
       <item path="Cola.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="ColaException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ColaException.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -229,10 +213,6 @@
       <item path="Itinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ItinerarioData.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="ItinerarioData.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Horario.cpp
  * Author: geraldi
@@ -13,31 +7,32 @@
 
 #include "Horario.h"
 
-Horario::Horario(Avion* avion,int espacios) {
-    this->avion=avion;
-    this->espacios=espacios;
-}
-
-Horario::Horario(const Horario& orig) {
+Horario::Horario(int horaSalida, int horaLlegada) {
+    this->horaSalida = horaSalida;
+    this->horaLlegada = horaLlegada;
 }
 
 Horario::~Horario() {
 }
 
-Avion* Horario::getAvion() {
-    return this->avion;
+int Horario::getHoraLlegada() {
+    return this->horaLlegada;
 }
 
-void Horario::setAvion(Avion* avion) {
-    this->avion=avion;
+void Horario::setHoraLlegada(int llegada) {
+    this->horaLlegada = llegada;
 }
 
-int Horario::getEspacios() {
-    return this->espacios;
+int Horario::getHoraSalida() {
+    return this->horaSalida;
 }
 
-void Horario::setEspacios(int espacios) {
-    this->espacios=espacios;
+void Horario::setHoraSalida(int salida) {
+    this->horaSalida = salida;
 }
 
-
+string Horario::toString() {
+    stringstream s;
+    s << "Salida: " << this->horaSalida << ", Llegada: " << this->horaLlegada;
+    return s.str();
+}

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Avion.h
  * Author: geraldi
@@ -15,24 +9,28 @@
 #define AVION_H
 #include <string>
 #include<sstream>
+
 using namespace std;
+
 class Avion {
 public:
-    Avion(string nombreAvion,int cantVuelos,float horasVuelo);
-    Avion(const Avion& orig);
+    Avion(string nombreAvion, int cantidadEspacios, int cantidadVuelos, int horasVuelo);
+    Avion();
     virtual ~Avion();
     string getNombreAvion();
     void setNombre(string nombre);
-    int getCantVuelos();
-    void setCantVuelos(int vuelos);
-    float getHorasVuelo();
-    void setHorasVuelo(float horas);
-    
+    int getCantidadVuelos();
+    void setCantidadVuelos(int vuelos);
+    int getHorasVuelo();
+    void setHorasVuelo(int horas);
+    int getCantidadEspacios();
+    void setCantidadEspacios(int espacios);
+
 private:
     string nombreAvion;
-    int cantVuelos;
-    float horasVuelo;
+    int cantidadEspacios;
+    int cantidadVuelos;
+    int horasVuelo;
 };
 
 #endif /* AVION_H */
-

@@ -7,13 +7,13 @@
 
 #include "Vuelo.h"
 
-Vuelo::Vuelo(Itinerario* itinerario,Ciudad* ciudadOrigen,Ciudad* ciudadDestino) {
-    this->itinerario=itinerario;
-    this->ciudadDestino=ciudadDestino;
-    this->ciudadOrigen=ciudadOrigen;
+Vuelo::Vuelo(Itinerario* itinerario, Ciudad* ciudadOrigen, Ciudad* ciudadDestino) {
+    this->itinerario = itinerario;
+    this->ciudadDestino = ciudadDestino;
+    this->ciudadOrigen = ciudadOrigen;
 }
 
-Vuelo::Vuelo(const Vuelo& orig) {
+Vuelo::Vuelo() {
 }
 
 Vuelo::~Vuelo() {
@@ -24,7 +24,7 @@ Ciudad* Vuelo::getCiudadOrigen() {
 }
 
 void Vuelo::setCiudadOrigen(Ciudad* ciudadOrigen) {
-    this->ciudadOrigen=ciudadOrigen;
+    this->ciudadOrigen = ciudadOrigen;
 }
 
 Itinerario* Vuelo::getItinerario() {
@@ -32,14 +32,21 @@ Itinerario* Vuelo::getItinerario() {
 }
 
 void Vuelo::setItinerario(Itinerario* itinerario) {
-    this->itinerario=itinerario;
+    this->itinerario = itinerario;
 }
 
 Ciudad* Vuelo::getciudadDestino() {
     return this->ciudadDestino;
-    
+
 }
 
 void Vuelo::setciudadDestino(Ciudad* ciudadDestino) {
-    this->ciudadDestino=ciudadDestino;
+    this->ciudadDestino = ciudadDestino;
 }
+
+string Vuelo::toString() {
+    stringstream s;
+    s << "Vuelo: " << getCiudadOrigen() << " a " << getciudadDestino() << ", Avion: " << getItinerario()->getAvion()->getNombreAvion();
+    s << "\nItinerario: " << getItinerario()->getColaPrioridad()->toString();
+    return s.str();
+}//toString

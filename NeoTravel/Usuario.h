@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Usuario.h
  * Author: geraldi
@@ -16,14 +10,13 @@
 
 #include <string>
 #include<sstream>
+
 using namespace std;
 
 class Usuario {
 public:
-    Usuario(string nombre,int edad,string genero,int numPasaporte, string nacionalidad);
-    Usuario(const Usuario& orig);
+    Usuario(string nombre, int edad, string genero, int numPasaporte, string nacionalidad, bool permisoIngreso);
     virtual ~Usuario();
-    
     string getNombre();
     void setNombre(string nombre);
     int getEdad();
@@ -34,15 +27,17 @@ public:
     void setNumeroPasaporte(int numeroPasaporte);
     string getNacionalidad();
     void setNacionalidad(string nacionalidad);
+    bool getPermisoIngreso();
+    void setPermisoIngreso(bool permiso);
     string toString();
-    
+
 private:
     string nombre;
     int edad;
     string genero;
-    int  numeroPasaporte;
+    int numeroPasaporte;
     string nacionalidad;
+    bool permisoIngreso;
 };
 
 #endif /* USUARIO_H */
-

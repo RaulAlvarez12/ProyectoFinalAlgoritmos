@@ -1,4 +1,3 @@
-
 /* 
  * File:   Cola.cpp
  * Author: alsov
@@ -7,7 +6,6 @@
  */
 
 #include "Cola.h"
-#include "ColaException.h"
 
 Cola::Cola() {
     cola = NULL; //creamos la cola para poder manejarla
@@ -16,158 +14,84 @@ Cola::Cola() {
 
 }
 
-Cola::Cola(const Cola& orig) {
-}
-
 Cola::~Cola() {
-}
-
-void Cola::menu() {
-
-    std::cout << "Menu de la Cola" << endl;
-
-    cout << "1. Encolar  " << endl;
-    cout << "2. Desencolar " << endl;
-    cout << "3. Existe  " << endl;
-    cout << "4. Frente " << endl;
-    cout << "5. Anular  " << endl;
-    cout << "6. Salir  " << endl;
-
-    cout << "Ingrese cualquier opcion: ";
-    cout << " " << endl;
-
 }
 
 int Cola::getSize() {
 
-
     ptrCola aux = anterior;
 
     if (isEmpty()) {
-
-        throw new ColaException("Cola vacia");
-
+        cout << "La cola esta vacia." << endl;
     }
 
     int cont = 0;
-
     while (aux != NULL) {
-
 
         cont++;
         aux = aux->sgte;
     }
-
     return this->contador;
-
-
-
-}
+}//getSize
 
 bool Cola::isEmpty() {
-
-
     return this->anterior == NULL;
-
-}
+}//isEmpty
 
 void Cola::anular() {
-
     anterior = posterior = NULL;
     //delete cola;
+}//anular
 
-    cout << "La cola no existe" << endl;
-
-}
-
-void Cola::encolar(int salida, int llegada) {
+void Cola::encolar(Horario* horario) {
 
     ptrCola aux;
-
     aux = new (struct nodo);
-
-    aux->salidaVuelo = salida;
-    aux->llegadaVuelo = llegada;
-
+    aux->horario = horario;
     aux->sgte = NULL;
 
     // ingreso del primer valor
     if (isEmpty()) {
-
-        //cola->sgte = aux;
-        //  anterior = aux;
-
         anterior = aux;
         posterior = aux;
-
     } else {
-
-        // posterior->sgte = new (struct nodo);
-        //        aux->element = elemento;
-        //        aux = aux->sgte;
-        //cola->anterior->sgte = aux;
-
         posterior->sgte = aux;
         posterior = aux;
-
     }
+    definePrioridad();
+    ordenarPrioridad();
+}//encolar
 
-}
-
-int Cola::desencolar() {
-
+Horario* Cola::desencolar() {
 
     if (isEmpty()) {
-
-        throw new ColaException("Cola vacia");
-        return -1;
-
+        cout << "La cola esta vacia." << endl;
     }
 
-
-    int elementoDesencolar = anterior->salidaVuelo;
-
+    Horario* horarioDesencolar = anterior->horario;
     ptrCola borrar = anterior;
 
     if (anterior == posterior) {
-
         anterior = NULL;
         posterior = NULL;
-
-
     } else {
-
         anterior = anterior->sgte;
-
-
     }
-
     delete borrar;
 
+    return horarioDesencolar;
+}//desencolar
 
-    //     elementoDesencolar = anterior->element;
-    //    anterior = anterior->sgte;
-    //
-    //    return elementoADesencolar;
-    return elementoDesencolar;
-}
-
-bool Cola::existe(int elemento) {
+bool Cola::existe(Horario* horario) {
 
     if (isEmpty()) {
-
-        throw new ColaException("Cola vacia");
-
+        cout << "La cola esta vacia." << endl;
     }
 
     ptrCola aux = anterior;
-
     while (aux != NULL) {
-
-        if (aux->salidaVuelo == elemento) {
-
+        if (aux->horario->getHoraLlegada() == horario->getHoraLlegada() && aux->horario->getHoraSalida() == horario->getHoraSalida()) {
             return true;
-
         } //fin if
 
         aux = aux->sgte;
@@ -175,43 +99,25 @@ bool Cola::existe(int elemento) {
     } //fin while
 
     return false;
+}//existe
 
-}
-
-int Cola::frente() {
+Horario* Cola::frente() {
 
     if (isEmpty()) {
-
-        throw new ColaException("Cola vacia");
-
+        cout << "La cola esta vacia." << endl;
     }
-
-    return anterior->salidaVuelo;
-
-
-}
+    return anterior->horario;
+}//frente
 
 string Cola::toString() {
     ptrCola recorrido = anterior;
     stringstream s;
-    //  cout << "Listado de todos los elementos de la cola.\n";
     while (recorrido != NULL) {
-        s << "Salida: " << recorrido->salidaVuelo << " Llegada: " << recorrido->llegadaVuelo << endl;
+        s << recorrido->horario->toString() << "\n";
         recorrido = recorrido->sgte;
     }
-    // s << "\n";
     return s.str();
-}
-
-void Cola::imprimir() {
-    ptrCola recorrido = anterior;
-    cout << "Listado de todos los elementos de la cola.\n";
-    while (recorrido != NULL) {
-        cout << "Salida: " << recorrido->salidaVuelo << " Llegada: " << recorrido->llegadaVuelo << ". Prioridad: " << recorrido->prioridad << endl;
-        recorrido = recorrido->sgte;
-    }
-    cout << "\n";
-}
+}//toString
 
 void Cola::ordenarPrioridad() {
 
@@ -235,37 +141,30 @@ void Cola::ordenarPrioridad() {
             if (aux->prioridad > aux2->prioridad) {
 
                 auxPrioridad = aux->prioridad;
-                auxSalidaVuelo = aux->salidaVuelo;
-                auxLegada = aux->llegadaVuelo;
+                auxSalidaVuelo = aux->horario->getHoraSalida();
+                auxLegada = aux->horario->getHoraLlegada();
 
                 aux->prioridad = aux2->prioridad;
-                aux->salidaVuelo = aux2->salidaVuelo;
-                aux->llegadaVuelo = aux2->llegadaVuelo;
+                aux->horario->setHoraSalida(aux2->horario->getHoraSalida());
+                aux->horario->setHoraLlegada(aux2->horario->getHoraLlegada());
 
                 aux2->prioridad = auxPrioridad;
-                aux2->salidaVuelo = auxSalidaVuelo;
-                aux2->llegadaVuelo = auxLegada;
-
+                aux2->horario->setHoraSalida(auxSalidaVuelo);
+                aux2->horario->setHoraLlegada(auxLegada);
             }
             aux2 = aux2->sgte;
         }
         aux = aux->sgte;
     }
-}
+}//ordenarPrioridad
 
 void Cola::definePrioridad() {
 
     ptrCola recorrido = anterior;
-    cout << "Entra al metodo" << endl;
 
     while (recorrido != NULL) {
 
-        cout << "entra al while" << endl;
-        cout << recorrido->salidaVuelo << endl;
-
-        switch (recorrido->salidaVuelo) {
-
-                //cout << "entra al switch" << endl;
+        switch (recorrido->horario->getHoraSalida()) {
 
             case 1:
                 recorrido->prioridad = 1;
@@ -362,8 +261,6 @@ void Cola::definePrioridad() {
                 recorrido->prioridad = 24;
                 break;
         }
-
         recorrido = recorrido->sgte;
     }
-
-}
+}//definePrioridad

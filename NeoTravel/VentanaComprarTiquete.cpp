@@ -90,7 +90,7 @@ void VentanaComprarTiquete::onButtonClickedSiguiente() {
             && etNumID.get_text().compare("") != 0 && etNacionalidad.get_text().compare("") != 0 
             && etCiudadOrigen.get_text().compare("") != 0 && etCiudadDestino.get_text().compare("") != 0) {
         
-        Usuario* usuario =  new Usuario(etNombre.get_text(),atoi(etEdad.get_text().c_str()),etGenero.get_text(),atoi(etNumID.get_text().c_str()),etNacionalidad.get_text());
+        Usuario* usuario =  new Usuario(etNombre.get_text(),atoi(etEdad.get_text().c_str()),etGenero.get_text(),atoi(etNumID.get_text().c_str()),etNacionalidad.get_text(), true);
         vHorarios = new VentanaHorarios(usuario,aerolineaActual,new Ciudad(etCiudadOrigen.get_text()),new Ciudad(etCiudadDestino.get_text()));
         this->vHorarios->signal_hide().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::aboutWinClose));
         vHorarios->show();
