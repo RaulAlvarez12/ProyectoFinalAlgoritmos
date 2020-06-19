@@ -6,6 +6,7 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.h</itemPath>
+        <itemPath>VueloData.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
@@ -44,6 +45,7 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="Data" projectFiles="true">
         <itemPath>AerolineaData.cpp</itemPath>
+        <itemPath>VueloData.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
@@ -91,7 +93,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
-          <commandLine>`pkg-config gtkmm-3.0 --cflags`</commandLine>
+          <commandLine>`pkg-config gtkmm-3.0 --cflags` -pthread</commandLine>
         </ccTool>
         <linkerTool>
           <commandLine>`pkg-config gtkmm-3.0 --libs`</commandLine>
@@ -160,6 +162,10 @@
       <item path="Vuelo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Vuelo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VueloData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VueloData.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -249,6 +255,10 @@
       <item path="Vuelo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Vuelo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VueloData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VueloData.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

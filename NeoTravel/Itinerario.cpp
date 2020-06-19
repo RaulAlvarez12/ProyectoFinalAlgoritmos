@@ -35,3 +35,9 @@ Cola* Itinerario::getColaPrioridad() {
 void Itinerario::setColaPrioridad(Cola* cola) {
     this->colaPrioridad = cola;
 }
+
+string Itinerario::toString() {
+    stringstream s;
+    s << "Itinerario: " << this->avion->toString() << this->colaPrioridad->toString();
+    return s.str();
+}

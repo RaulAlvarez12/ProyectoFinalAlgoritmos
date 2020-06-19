@@ -55,3 +55,10 @@ int Avion::getCantidadEspacios() {
 void Avion::setCantidadEspacios(int espacios) {
     this->cantidadEspacios = espacios;
 }
+
+string Avion::toString() {
+    stringstream s;
+    s << "Nombre del avion: " << this->nombreAvion << ", cantidad asientos:" << this->cantidadEspacios << ", cantidad vuelos: "
+            << this->cantidadVuelos << ", horas de vuelo: " << this->horasVuelo;
+    return s.str();
+}

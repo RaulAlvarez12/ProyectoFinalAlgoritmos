@@ -50,6 +50,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/VentanaItinerario.o \
 	${OBJECTDIR}/VentanaPrincipal.o \
 	${OBJECTDIR}/Vuelo.o \
+	${OBJECTDIR}/VueloData.o \
 	${OBJECTDIR}/main.o
 
 
@@ -57,8 +58,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`pkg-config gtkmm-3.0 --cflags` 
-CXXFLAGS=`pkg-config gtkmm-3.0 --cflags` 
+CCFLAGS=`pkg-config gtkmm-3.0 --cflags` -pthread 
+CXXFLAGS=`pkg-config gtkmm-3.0 --cflags` -pthread 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -151,6 +152,11 @@ ${OBJECTDIR}/Vuelo.o: Vuelo.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vuelo.o Vuelo.cpp
+
+${OBJECTDIR}/VueloData.o: VueloData.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VueloData.o VueloData.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

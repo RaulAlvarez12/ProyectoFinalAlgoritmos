@@ -53,6 +53,7 @@ private:
     Aerolinea* aerolineaActual;
     AerolineaData* aerolineaData;
     
+    Vuelo* vueloActual;
     
 };
 

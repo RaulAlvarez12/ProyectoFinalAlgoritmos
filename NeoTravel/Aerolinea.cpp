@@ -10,6 +10,7 @@
 Aerolinea::Aerolinea(string nombre) {
     this->nombreAerolinea = nombre;
     this->posicion = 0;
+    vueloData = new VueloData();
 }
 
 Aerolinea::Aerolinea() {
@@ -27,13 +28,13 @@ string Aerolinea::getNombre() {
 string Aerolinea::toString() {
     stringstream s;
     s << "Nombre: " << this->nombreAerolinea;
-    for (int i = 0; i < this->vuelos.size(); i++) {
-        s << this->vuelos[i]->toString() << "\n";
-    }
-    //s<< this->vueloData->toString();
+//    for (int i = 0; i < this->vuelos.size(); i++) {
+//        s << this->vuelos[i]->toString() << "\n";
+//    }
+    s<< this->vueloData->toString();
     return s.str();
 }
-
+//######USAN VECTOR#######//
 //void Aerolinea::agregarVuelo(Vuelo* vuelo) {
 //    this->vuelos.push_back(vuelo);
 //}

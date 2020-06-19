@@ -46,7 +46,7 @@ void Vuelo::setciudadDestino(Ciudad* ciudadDestino) {
 
 string Vuelo::toString() {
     stringstream s;
-    s << "Vuelo: " << getCiudadOrigen() << " a " << getciudadDestino() << ", Avion: " << getItinerario()->getAvion()->getNombreAvion();
-    s << "\nItinerario: " << getItinerario()->getColaPrioridad()->toString();
+    s << "Vuelo: " << getCiudadOrigen()->toString() << " a " << getciudadDestino()->toString();
+    s << "\nItinerario: " << this->itinerario->toString();
     return s.str();
 }//toString

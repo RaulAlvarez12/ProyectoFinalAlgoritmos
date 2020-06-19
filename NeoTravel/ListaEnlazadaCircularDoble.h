@@ -9,13 +9,12 @@
 #define LISTAENLAZADACIRCULARDOBLE_H
 
 #include <string.h>
-#include "Aerolinea.h"
 
 using namespace std;
 
 template <typename T>
 class ListaEnlazadaCircularDoble {
-
+    
     struct nodo {
         T* elemento;
         struct nodo *sgte; //apuntador al nodo SIGUIENTE
@@ -26,9 +25,6 @@ public:
 
     ListaEnlazadaCircularDoble() {
         this->inicio = this->ultimo = NULL;
-    }
-
-    ListaEnlazadaCircularDoble(const ListaEnlazadaCircularDoble& orig) {
     }
 
     ~ListaEnlazadaCircularDoble() {
@@ -223,6 +219,7 @@ public:
                 aux = aux->sgte;
             }
         }
+        return s.str();
     }//toString
 
     void invertirLista() {

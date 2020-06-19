@@ -7,7 +7,6 @@
 
 #ifndef AEROLINEADATA_H
 #define AEROLINEADATA_H
-#include <vector>
 #include <iostream>
 
 #include "Aerolinea.h"
@@ -17,7 +16,7 @@ using namespace std;
 
 class AerolineaData {
 public:
-    static AerolineaData* getInstance();
+    //static AerolineaData* getInstance();
     void agregarAerolinea(Aerolinea* aerolinea);
     ListaEnlazadaCircularDoble<Aerolinea>* obtenerListaDeAerolineas();
     void mostrar();
@@ -26,11 +25,11 @@ public:
     Aerolinea* obtenerSiguiente(Aerolinea* aerolinea);
     Aerolinea* obtenerAnterior(Aerolinea* aerolinea);
     Aerolinea* firstInList();
+
 private:
-
-    static AerolineaData* instance;
+    //static AerolineaData* instance;
     ListaEnlazadaCircularDoble<Aerolinea>* ListaAerolineas = new ListaEnlazadaCircularDoble<Aerolinea>;
-
+    
 };
 
 //AerolineaData* AerolineaData::instance=0;

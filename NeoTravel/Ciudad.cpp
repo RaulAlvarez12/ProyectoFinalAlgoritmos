@@ -25,6 +25,6 @@ void Ciudad::setNombre(string nombre) {
 
 string Ciudad::toString() {
     stringstream s;
-    s << "\nNombre de la ciudad: " << this->nombre;
+    s << this->nombre;
     return s.str();
 }

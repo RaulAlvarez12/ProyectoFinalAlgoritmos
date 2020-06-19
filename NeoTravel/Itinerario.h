@@ -8,6 +8,9 @@
 #ifndef ITINERARIO_H
 #define ITINERARIO_H
 
+#include <string.h>
+#include <sstream>
+
 #include "Cola.h"
 #include "Avion.h"
 
@@ -22,7 +25,7 @@ public:
     void setColaPrioridad(Cola* cola);
     Avion* getAvion();
     void setAvion(Avion* avion);
-
+    string toString();
 private:
     Avion* avion;
     Cola* colaPrioridad;

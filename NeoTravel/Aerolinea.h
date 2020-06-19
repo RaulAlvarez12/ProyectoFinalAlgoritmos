@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "Vuelo.h"
+#include "VueloData.h"
 
 using namespace std;
 
@@ -21,17 +22,19 @@ public:
     Aerolinea();
     virtual ~Aerolinea();
     string getNombre();
-    vector<Vuelo*> getVuelos();
+    //vector<Vuelo*> getVuelos();
     void agregarVuelo(Vuelo* vuelo);
     Vuelo* vueloActual(int posicion);
     Vuelo* primerVuelo(); //Devuelve el primer vuelo que tiene el vector de vuelos
     string toString();
-
+    VueloData* vueloData;
+    
 private:
     int posicion;
     string nombreAerolinea;
-    vector<Vuelo*> vuelos;
-
+    //vector<Vuelo*> vuelos;
+    
+    
 };
 
 #endif /* AEROLINEA_H */

@@ -23,6 +23,7 @@ VentanaItinerario::~VentanaItinerario() {
 void VentanaItinerario::init(){
     
     this->aerolineaActual = aerolineaData->firstInList();
+    this->vueloActual = aerolineaActual->vueloData->firstInList();
     
     this->lblAerolinea.set_label("Aerolinea");
     this->fixed.put(this->lblAerolinea, 20, 20);
@@ -39,7 +40,7 @@ void VentanaItinerario::init(){
     
     this->lblVuelo.set_label("Vuelo");
     this->fixed.put(this->lblVuelo, 250, 20);
-    this->lblVueloActual.set_label("POR HACER");
+    this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
     this->fixed.put(this->lblVueloActual, 250, 100);
     
     this->btnIzqVuelo.set_label("<-");
@@ -51,9 +52,9 @@ void VentanaItinerario::init(){
     this->fixed.put(this->btnDerVuelo, 300, 150);
     
     this->lbl_Itinerario.set_label("Itinerario");
-    this->fixed.put(this->lbl_Itinerario, 500, 20);
-    this->lbl_ItinerarioActual.set_label("POR HACER");
-    this->fixed.put(this->lbl_ItinerarioActual, 500, 100);
+    this->fixed.put(this->lbl_Itinerario, 20, 230);
+    this->lbl_ItinerarioActual.set_label(this->vueloActual->getItinerario()->toString());
+    this->fixed.put(this->lbl_ItinerarioActual, 20, 250);
     
     this->add(fixed);
     this->show_all_children();
@@ -61,18 +62,28 @@ void VentanaItinerario::init(){
 
 void VentanaItinerario::onButtonClickedIzqAerolinea(){
     aerolineaActual = aerolineaData->obtenerSiguiente(aerolineaActual);
+    this->vueloActual = this->aerolineaActual->vueloData->firstInList();
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
+    this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
+    this->lbl_ItinerarioActual.set_label(this->vueloActual->getItinerario()->toString());
 }//onButtonClickedIzqAerolinea
 
 void VentanaItinerario::onButtonClickedDerAerolinea(){
     aerolineaActual = aerolineaData->obtenerAnterior(aerolineaActual);
+    this->vueloActual = this->aerolineaActual->vueloData->firstInList();
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
+    this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
+    this->lbl_ItinerarioActual.set_label(this->vueloActual->getItinerario()->toString());
 }//onButtonClickedDerAerolinea
 
 void VentanaItinerario::onButtonClickedIzqVuelo(){
-    //aerolineaActual->getVuelos();
+    this->vueloActual = this->aerolineaActual->vueloData->obtenerAnteriorVuelo(this->vueloActual);
+    this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
+    this->lbl_ItinerarioActual.set_label(this->vueloActual->toString());
 }//onButtonClickedIzqVuelo
 
 void VentanaItinerario::onButtonClickedDerVuelo(){
-    
+    this->vueloActual = this->aerolineaActual->vueloData->obtenerSiguienteVuelo(this->vueloActual);
+    this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
+    this->lbl_ItinerarioActual.set_label(this->vueloActual->toString());
 }//onButtonClickedDerVuelo

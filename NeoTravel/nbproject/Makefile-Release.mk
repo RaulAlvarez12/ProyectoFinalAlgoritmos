@@ -50,6 +50,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/VentanaItinerario.o \
 	${OBJECTDIR}/VentanaPrincipal.o \
 	${OBJECTDIR}/Vuelo.o \
+	${OBJECTDIR}/VueloData.o \
 	${OBJECTDIR}/main.o
 
 
@@ -151,6 +152,11 @@ ${OBJECTDIR}/Vuelo.o: Vuelo.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vuelo.o Vuelo.cpp
+
+${OBJECTDIR}/VueloData.o: VueloData.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VueloData.o VueloData.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

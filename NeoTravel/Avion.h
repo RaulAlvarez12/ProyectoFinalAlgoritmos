@@ -25,7 +25,8 @@ public:
     void setHorasVuelo(int horas);
     int getCantidadEspacios();
     void setCantidadEspacios(int espacios);
-
+    string toString();
+    
 private:
     string nombreAvion;
     int cantidadEspacios;
