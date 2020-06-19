@@ -55,6 +55,7 @@ private:
     
     Vuelo* vueloActual;
     
+    string infoItinerario;
 };
 
 #endif /* VENTANAITINERARIO_H */
