@@ -26,7 +26,7 @@
         <logicalFolder name="f1" displayName="ComprarTIquete" projectFiles="true">
           <itemPath>VentanaComprarTiquete.h</itemPath>
           <itemPath>VentanaEscogerAerolinea.h</itemPath>
-          <itemPath>VentanaHorarios.h</itemPath>
+          <itemPath>VentanaFactura.h</itemPath>
         </logicalFolder>
         <itemPath>VentanaItinerario.h</itemPath>
         <itemPath>VentanaPrincipal.h</itemPath>
@@ -64,7 +64,7 @@
         <logicalFolder name="f1" displayName="ComprarTiquete" projectFiles="true">
           <itemPath>VentanaComprarTiquete.cpp</itemPath>
           <itemPath>VentanaEscogerAerolinea.cpp</itemPath>
-          <itemPath>VentanaHorarios.cpp</itemPath>
+          <itemPath>VentanaFactura.cpp</itemPath>
         </logicalFolder>
         <itemPath>VentanaItinerario.cpp</itemPath>
         <itemPath>VentanaPrincipal.cpp</itemPath>
@@ -147,9 +147,9 @@
       </item>
       <item path="VentanaEscogerAerolinea.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="VentanaHorarios.cpp" ex="false" tool="1" flavor2="0">
+      <item path="VentanaFactura.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="VentanaHorarios.h" ex="false" tool="3" flavor2="0">
+      <item path="VentanaFactura.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="VentanaItinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -240,9 +240,9 @@
       </item>
       <item path="VentanaEscogerAerolinea.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="VentanaHorarios.cpp" ex="false" tool="1" flavor2="0">
+      <item path="VentanaFactura.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="VentanaHorarios.h" ex="false" tool="3" flavor2="0">
+      <item path="VentanaFactura.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="VentanaItinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>

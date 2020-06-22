@@ -30,6 +30,7 @@ public:
     bool getPermisoIngreso();
     void setPermisoIngreso(bool permiso);
     string toString();
+    void compruebaPermiso(string ciudadDestino);
 
 private:
     string nombre;

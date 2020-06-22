@@ -19,7 +19,7 @@
 #include<iostream>
 
 #include "Aerolinea.h"
-#include "VentanaHorarios.h"
+#include "VentanaFactura.h"
 
 class VentanaComprarTiquete : public Gtk::Window {
 public:
@@ -29,8 +29,11 @@ public:
 private:
     void init();
     void aboutWinClose();
-    void onButtonClickedSiguiente();
-
+    void onButtonClickedComprar();
+    void onButtonClickedIzqHorario();
+    void onButtonClickedDerHorario();
+    void onButtonClickedIzqVuelo();
+    void onButtonClickedDerVuelo();
 
     Gtk::Fixed fixed;
     Gtk::Label lblBienvenido;
@@ -40,22 +43,26 @@ private:
     Gtk::Label lblGenero;
     Gtk::Label lblNumID;
     Gtk::Label lblNacionalidad;
-    Gtk::Label lblCiudadSalida;
-    Gtk::Label lblCiudadDestino;
+    Gtk::Label lblVuelo;
     Gtk::Label lblDatosVuelo;
     Gtk::Label lblRequisito;
+    Gtk::Label lblHorario;
 
     Gtk::Entry etNombre;
     Gtk::Entry etEdad;
     Gtk::Entry etGenero;
     Gtk::Entry etNumID;
     Gtk::Entry etNacionalidad;
-    Gtk::Entry etCiudadOrigen;
-    Gtk::Entry etCiudadDestino;
 
 
-    Gtk::Button btnSiguiente;
-    VentanaHorarios* vHorarios;
+    Vuelo* vueloActual;
+    Gtk::Button btnComprar;
+    Gtk::Button btnSiguienteVuelo;
+    Gtk::Button btnAnteriorVuelo;
+    Gtk::Button btnSiguienteHorario;
+    Gtk::Button btnAnteriorHorario;
+    Horario* horarioActual;
+    VentanaFactura* vFactura;
     Aerolinea* aerolineaActual;
 };
 

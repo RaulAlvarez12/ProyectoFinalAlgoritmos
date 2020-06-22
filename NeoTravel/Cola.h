@@ -42,6 +42,9 @@ public:
     void ordenarPrioridad();
     string toString();
     ptrCola cola;
+    Horario* obtenerSiguienteHorario(Horario* horario);
+    Horario* obtenerAnteriorHorario(Horario* horario);
+    
 
 private:
 
