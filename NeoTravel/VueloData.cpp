@@ -11,10 +11,10 @@ VueloData::VueloData() {
     this->listaVuelos = new ListaEnlazadaCircularDoble<Vuelo>;
 
     Ciudad* cOrigen = new Ciudad("San Jose");
-    Ciudad* cDestino = new Ciudad("Barcelona");
+    Ciudad* cDestino = new Ciudad("Estados Unidos");
     Avion* avion = new Avion("Boeing", 80, 20, 60);
-    Horario* horario1 = new Horario(1, 5);
-    Horario* horario2 = new Horario(2, 6);
+    Horario* horario1 = new Horario(1, 3);
+    Horario* horario2 = new Horario(4, 6);
     Cola* cola = new Cola();
     cola->encolar(horario1);
     cola->encolar(horario2);
@@ -28,11 +28,13 @@ VueloData::VueloData() {
     Ciudad* c2Origen = new Ciudad("New York");
     Ciudad* c2Destino = new Ciudad("Wuhan");
     Avion* avion2 = new Avion("AvionetaMieo", 20, 10, 30);
-    Horario* horario3 = new Horario(3, 8);
+    Horario* horario3 = new Horario(3, 5);
     Horario* horario4 = new Horario(6, 7);
+    Horario* horario5 = new Horario(8, 10);
     Cola* cola2 = new Cola();
     cola2->encolar(horario3);
     cola2->encolar(horario4);
+    cola2->encolar(horario5);
 
     Itinerario* itinerario2 = new Itinerario(avion2, cola2);
 

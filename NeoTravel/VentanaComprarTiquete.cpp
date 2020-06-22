@@ -13,10 +13,11 @@
 
 #include "VentanaComprarTiquete.h"
 #include "Ciudad.h"
+#include "Tiquete.h"
 
 VentanaComprarTiquete::VentanaComprarTiquete(Aerolinea* aerolinea) {
     this->aerolineaActual = aerolinea;
-    this->set_size_request(300, 400);
+    this->set_size_request(700, 350);
     this->set_title("Comprar Tiquete");
 
     init();
@@ -30,9 +31,10 @@ VentanaComprarTiquete::~VentanaComprarTiquete() {
 }
 
 void VentanaComprarTiquete::init() {
-
+    vueloActual = aerolineaActual->vueloData->firstInList();
+    horarioActual= aerolineaActual->vueloData->firstInList()->getItinerario()->getColaPrioridad()->frente();
     this->lblBienvenido.set_label("Bienvenido Gracias por viajar con " + aerolineaActual->getNombre());
-    this->fixed.put(this->lblBienvenido, 20, 20);
+    this->fixed.put(this->lblBienvenido, 200, 20);
 
 
     this->lblDatosPersonales.set_label("Datos Personales:");
@@ -41,7 +43,8 @@ void VentanaComprarTiquete::init() {
     this->lblNombre.set_label("Nombre:");
     this->fixed.put(this->lblNombre, 10, 90);
     this->fixed.put(this->etNombre, 115, 90);
-
+    this->etEdad.set_max_length(3);
+    this->etNumID.set_max_length(9);
     this->lblEdad.set_label("Edad:");
     this->fixed.put(this->lblEdad, 10, 120);
     this->fixed.put(this->etEdad, 115, 120);
@@ -59,44 +62,97 @@ void VentanaComprarTiquete::init() {
     this->fixed.put(this->etNacionalidad, 115, 210);
 
     this->lblDatosVuelo.set_label("Datos del Vuelo:");
-    this->fixed.put(this->lblDatosVuelo, 70, 250);
-
-    this->lblCiudadSalida.set_label("Ciudad Origen:");
-    this->fixed.put(this->lblCiudadSalida, 10, 280);
-    this->fixed.put(this->etCiudadOrigen, 115, 280);
-
-    this->lblCiudadDestino.set_label("Ciudad Destino:");
-    this->fixed.put(this->lblCiudadDestino, 10, 310);
-    this->fixed.put(this->etCiudadDestino, 115, 310);
-
-    this->btnSiguiente.set_label("Siguiente");
-    this->btnSiguiente.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedSiguiente));
-    this->fixed.put(this->btnSiguiente, 115, 345);
+    this->fixed.put(this->lblDatosVuelo, 400, 60);
 
 
 
-    this->fixed.put(this->lblRequisito, 10, 380);
+    this->lblVuelo.set_label("Vuelo: "+vueloActual->getCiudadOrigen()->getNombre() + " con destino " + vueloActual->getciudadDestino()->getNombre());
+    this->fixed.put(this->lblVuelo, 375, 90);
+
+    this->btnAnteriorVuelo.set_label("<-");
+    this->btnAnteriorVuelo.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedIzqVuelo));
+    this->fixed.put(this->btnAnteriorVuelo, 385, 120);
+    this->btnSiguienteVuelo.set_label("->");
+    this->btnSiguienteVuelo.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedDerVuelo));
+    this->fixed.put(this->btnSiguienteVuelo, 485, 120);
+    
+    this->lblHorario.set_label("Horario: "+horarioActual->toString());
+    this->fixed.put(this->lblHorario, 375, 180);
+
+     this->btnAnteriorHorario.set_label("<-");
+    this->btnAnteriorHorario.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedIzqHorario));
+    this->fixed.put(this->btnAnteriorHorario, 385, 200);
+    this->btnSiguienteHorario.set_label("->");
+    this->btnSiguienteHorario.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedDerHorario));
+    this->fixed.put(this->btnSiguienteHorario, 485, 200);
+    
+    
+    this->btnComprar.set_label("Comprar");
+    this->btnComprar.signal_clicked().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::onButtonClickedComprar));
+    this->fixed.put(this->btnComprar, 335, 270);
+
+
+
+    this->fixed.put(this->lblRequisito, 10, 290);
 
     this->add(fixed);
     this->show_all_children();
 }
 
 void VentanaComprarTiquete::aboutWinClose() {
-    this->vHorarios = 0;
+    this->vFactura = 0;
 }
 
-void VentanaComprarTiquete::onButtonClickedSiguiente() {
-    if (etNombre.get_text().compare("") != 0 && etEdad.get_text().compare("") != 0 && etGenero.get_text().compare("") != 0
-            && etNumID.get_text().compare("") != 0 && etNacionalidad.get_text().compare("") != 0 
-            && etCiudadOrigen.get_text().compare("") != 0 && etCiudadDestino.get_text().compare("") != 0) {
-        
-        Usuario* usuario =  new Usuario(etNombre.get_text(),atoi(etEdad.get_text().c_str()),etGenero.get_text(),atoi(etNumID.get_text().c_str()),etNacionalidad.get_text(), true);
-        vHorarios = new VentanaHorarios(usuario,aerolineaActual,new Ciudad(etCiudadOrigen.get_text()),new Ciudad(etCiudadDestino.get_text()));
-        this->vHorarios->signal_hide().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::aboutWinClose));
-        vHorarios->show();
-        this->close();
-        
-        
+void VentanaComprarTiquete::onButtonClickedIzqVuelo() {
+    vueloActual = aerolineaActual->vueloData->obtenerAnteriorVuelo(vueloActual);
+    horarioActual= vueloActual->getItinerario()->getColaPrioridad()->frente();
+    this->lblVuelo.set_label("Vuelo: "+vueloActual->getCiudadOrigen()->getNombre() + " con destino  " + vueloActual->getciudadDestino()->getNombre());
+    this->lblHorario.set_label("Horario: "+horarioActual->toString());
+}
+
+void VentanaComprarTiquete::onButtonClickedDerVuelo() {
+    
+    vueloActual = aerolineaActual->vueloData->obtenerSiguienteVuelo(vueloActual);
+    horarioActual= vueloActual->getItinerario()->getColaPrioridad()->frente();
+    this->lblVuelo.set_label("Vuelo: "+vueloActual->getCiudadOrigen()->getNombre() + " con destino " + vueloActual->getciudadDestino()->getNombre());
+    this->lblHorario.set_label("Horario: "+horarioActual->toString());
+}
+
+void VentanaComprarTiquete::onButtonClickedDerHorario() {
+    horarioActual = vueloActual->getItinerario()->getColaPrioridad()->obtenerSiguienteHorario(horarioActual);
+    this->lblHorario.set_label("Horario: "+horarioActual->toString());
+}
+
+void VentanaComprarTiquete::onButtonClickedIzqHorario() {
+    horarioActual = vueloActual->getItinerario()->getColaPrioridad()->obtenerAnteriorHorario(horarioActual);
+    this->lblHorario.set_label("Horario: "+horarioActual->toString());
+}
+
+void VentanaComprarTiquete::onButtonClickedComprar() {
+    if (!etNombre.get_text().empty() && !etEdad.get_text().empty() && !etGenero.get_text().empty()
+            && !etNumID.get_text().empty()&& !etNacionalidad.get_text().empty()) {
+        this->etNacionalidad.set_editable(false);
+
+
+        Usuario* usuario = new Usuario(etNombre.get_text(), atoi(etEdad.get_text().c_str()), etGenero.get_text(), atoi(etNumID.get_text().c_str()), etNacionalidad.get_text().c_str(), true);
+        usuario->compruebaPermiso(vueloActual->getciudadDestino()->getNombre());
+        Tiquete* tiqueteCompra = new Tiquete(usuario,this->aerolineaActual,this->vueloActual,this->horarioActual);
+        if (usuario->getPermisoIngreso() == false) {
+            Gtk::MessageDialog dialogo(
+                    *this,
+                    "*****AVISO IMPORTANTE*****",
+                    false,
+                    Gtk::MESSAGE_INFO
+                    );
+            dialogo.set_secondary_text("Debido a las nuevas regulaciones migratorias\nDefinidas en los articulos 15 y 23, inciso b) y d) respectivamente\nUsted NO puede ingresar a " + vueloActual->getciudadDestino()->getNombre() + "\n\nAun así puede elegir otro destino");
+            dialogo.run();
+        } else {
+            vFactura = new VentanaFactura(tiqueteCompra);
+            this->vFactura->signal_hide().connect(sigc::mem_fun(*this, &VentanaComprarTiquete::aboutWinClose));
+            vFactura->show();
+            this->close();
+        }
+
     } else {
         this->lblRequisito.set_label("**Debe rellenar todos los espacios");
     }

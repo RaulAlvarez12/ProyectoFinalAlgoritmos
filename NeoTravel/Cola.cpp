@@ -264,3 +264,55 @@ void Cola::definePrioridad() {
         recorrido = recorrido->sgte;
     }
 }//definePrioridad
+
+Horario* Cola::obtenerAnteriorHorario(Horario* horario) {
+    if(horario==anterior->horario){
+        return posterior->horario;
+    }else {
+        Horario* horarioAux;
+        Cola* colaAux = new Cola();
+        Horario* horarioAnterior = new Horario(0,0);
+        while(!isEmpty()){
+            horarioAux = desencolar();
+            if(horario==horarioAux){
+                horarioAnterior=colaAux->posterior->horario;
+                
+            }
+            colaAux->encolar(horarioAux);
+            
+        }
+        while(!colaAux->isEmpty()){
+            encolar(colaAux->desencolar());
+        }
+        
+        
+        return horarioAnterior;
+    }
+}
+
+Horario* Cola::obtenerSiguienteHorario(Horario* horario) {
+   
+    if(horario==posterior->horario){
+        return anterior->horario;
+    }else{
+        Horario* horarioAux;
+        Cola* colaAux = new Cola();
+        Horario* horarioSiguiente = new Horario(0,0);
+        while(!isEmpty()){
+            horarioAux = desencolar();
+            colaAux->encolar(horarioAux);
+            if(horario==horarioAux){
+                horarioSiguiente=desencolar();
+                colaAux->encolar(horarioSiguiente);
+            }
+            
+        }
+        while(!colaAux->isEmpty()){
+            encolar(colaAux->desencolar());
+        }
+        
+        return horarioSiguiente;
+    }
+    
+}
+

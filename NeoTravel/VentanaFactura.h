@@ -20,18 +20,26 @@
 #include "Ciudad.h"
 #include "Aerolinea.h"
 #include "Usuario.h"
+#include "Tiquete.h"
 
-class VentanaHorarios : public Gtk::Window{
+class VentanaFactura : public Gtk::Window{
 public:
-    VentanaHorarios(Usuario* usuario,Aerolinea* aerolinea, Ciudad* ciudadOrigen, Ciudad* ciudadDestino);
-    VentanaHorarios(const VentanaHorarios& orig);
-    virtual ~VentanaHorarios();
+    VentanaFactura(Tiquete* tiqueteCompra);
+    VentanaFactura(const VentanaFactura& orig);
+    virtual ~VentanaFactura();
 private:
     void init();
-    Aerolinea* aerolinea;
-    Ciudad* ciudadOrigen;
-    Ciudad* ciudadDestino;
-    Usuario* usuario;
+    Tiquete* tiqueteComprar;
+    
+    void aboutWinClose();
+    void onButtonClickedAceptar();
+
+
+    Gtk::Fixed fixed;
+    Gtk::Label lblDatos;
+    Vuelo* vueloActual;
+    Gtk::Button btnAceptar;
+
 };
 
 #endif /* VENTANAHORARIOS_H */

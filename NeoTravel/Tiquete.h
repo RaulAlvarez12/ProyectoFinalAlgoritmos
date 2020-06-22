@@ -17,9 +17,13 @@
 #include "Usuario.h"
 #include "Aerolinea.h"
 #include "Vuelo.h"
+#include "Horario.h"
+#include <string>
+#include <sstream>
+
 class Tiquete {
 public:
-    Tiquete(Usuario* usuario, Aerolinea* aerolinea, Vuelo* vuelo);
+    Tiquete(Usuario* usuario, Aerolinea* aerolinea, Vuelo* vuelo,Horario* horario);
     Tiquete(const Tiquete& orig);
     virtual ~Tiquete();
     Usuario* getUsuario();
@@ -28,11 +32,12 @@ public:
     void setAerolinea(Aerolinea* Aerolinea);
     Vuelo* getVuelo();
     void setVuelo(Vuelo* vuelo);
-    
+    string toString();
 private:
     Usuario* usuario;
     Aerolinea* aerolinea;
     Vuelo* vuelo;
+    Horario* horario;
 
 };
 

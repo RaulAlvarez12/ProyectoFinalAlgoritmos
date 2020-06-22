@@ -67,10 +67,19 @@ void Usuario::setPermisoIngreso(bool permiso) {
     this->permisoIngreso = permiso;
 }
 
+void Usuario::compruebaPermiso(string ciudadDestino) {
+    if (this->nacionalidad.compare("China") == 0 && ciudadDestino.compare("Costa Rica") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Mexico") == 0 && ciudadDestino.compare("Estados Unidos") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Ghana") == 0 && ciudadDestino.compare("España") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Venezuela") == 0 && ciudadDestino.compare("Colombia") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Irak") == 0 && ciudadDestino.compare("Estados Unidos") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Paquistan") == 0 && ciudadDestino.compare("Estados Unidos") == 0) this->permisoIngreso = false;
+    if (this->nacionalidad.compare("Israel") == 0 && ciudadDestino.compare("Estados Unidos") == 0) this->permisoIngreso = false;
+}
+
 string Usuario::toString() {
     stringstream s;
     s << "\nInformacion Usuario\nNombre: " << this->nombre << "\nEdad: " << this->edad << "\nGenero: " << this->genero
-            << "\nNumero de pasaporte: " << this->numeroPasaporte;
-    //<<"Nacionalidad: "this->nacionalidad;
+            << "\nNumero de pasaporte: " << this->numeroPasaporte << "\nNacionalidad: " << this->nacionalidad << "\nPermiso de ingreso: " << this->permisoIngreso;
     return s.str();
 }

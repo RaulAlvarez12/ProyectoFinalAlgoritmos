@@ -13,11 +13,12 @@
 
 #include "Tiquete.h"
 
-Tiquete::Tiquete(Usuario* usuario, Aerolinea* aerolinea, Vuelo* vuelo) {
+Tiquete::Tiquete(Usuario* usuario, Aerolinea* aerolinea, Vuelo* vuelo,Horario* horario) {
 
     this->usuario = usuario;
     this->aerolinea = aerolinea;
     this->vuelo = vuelo;
+    this->horario=horario;
 }
 
 void Tiquete::setAerolinea(Aerolinea* Aerolinea) {
@@ -43,6 +44,16 @@ void Tiquete::setVuelo(Vuelo* vuelo) {
 Vuelo* Tiquete::getVuelo() {
     return this->vuelo;
 }
+
+string Tiquete::toString() {
+stringstream s;
+    s << "Informacion de compra:\n"
+            <<"\n\nVuelo: "<<this->vuelo->getCiudadOrigen()->getNombre()<<" con destino a "<<this->vuelo->getciudadDestino()->getNombre()
+            <<"\nHorario: "<<horario->toString()
+            << "\n\nINFORMACION PERSONAL:"<<this->usuario->toString();
+    return s.str();
+}
+
 
 Tiquete::Tiquete(const Tiquete& orig) {
 }
