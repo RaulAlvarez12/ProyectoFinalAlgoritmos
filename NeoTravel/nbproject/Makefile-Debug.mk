@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Aerolinea.o \
 	${OBJECTDIR}/AerolineaData.o \
 	${OBJECTDIR}/Avion.o \
+	${OBJECTDIR}/AvionData.o \
 	${OBJECTDIR}/Ciudad.o \
 	${OBJECTDIR}/Cola.o \
 	${OBJECTDIR}/Horario.o \
@@ -48,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/VentanaEscogerAerolinea.o \
 	${OBJECTDIR}/VentanaFactura.o \
 	${OBJECTDIR}/VentanaItinerario.o \
+	${OBJECTDIR}/VentanaLoginAdmin.o \
 	${OBJECTDIR}/VentanaPrincipal.o \
 	${OBJECTDIR}/Vuelo.o \
 	${OBJECTDIR}/VueloData.o \
@@ -92,6 +94,11 @@ ${OBJECTDIR}/Avion.o: Avion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Avion.o Avion.cpp
+
+${OBJECTDIR}/AvionData.o: AvionData.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AvionData.o AvionData.cpp
 
 ${OBJECTDIR}/Ciudad.o: Ciudad.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -142,6 +149,11 @@ ${OBJECTDIR}/VentanaItinerario.o: VentanaItinerario.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaItinerario.o VentanaItinerario.cpp
+
+${OBJECTDIR}/VentanaLoginAdmin.o: VentanaLoginAdmin.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaLoginAdmin.o VentanaLoginAdmin.cpp
 
 ${OBJECTDIR}/VentanaPrincipal.o: VentanaPrincipal.cpp
 	${MKDIR} -p ${OBJECTDIR}

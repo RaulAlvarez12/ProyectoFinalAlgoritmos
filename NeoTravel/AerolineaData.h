@@ -16,22 +16,21 @@ using namespace std;
 
 class AerolineaData {
 public:
-    //static AerolineaData* getInstance();
+    static AerolineaData* getInstance();
     void agregarAerolinea(Aerolinea* aerolinea);
     ListaEnlazadaCircularDoble<Aerolinea>* obtenerListaDeAerolineas();
-    void mostrar();
-    virtual ~AerolineaData();
-    AerolineaData();
+    void eliminarAerolinea(Aerolinea* aerolinea);
     Aerolinea* obtenerSiguiente(Aerolinea* aerolinea);
     Aerolinea* obtenerAnterior(Aerolinea* aerolinea);
     Aerolinea* firstInList();
-
+    void mostrar();
+protected:
+    AerolineaData();
+    
 private:
-    //static AerolineaData* instance;
+    static AerolineaData* instance;
     ListaEnlazadaCircularDoble<Aerolinea>* ListaAerolineas = new ListaEnlazadaCircularDoble<Aerolinea>;
     
 };
-
-//AerolineaData* AerolineaData::instance=0;
 
 #endif /* AEROLINEADATA_H */

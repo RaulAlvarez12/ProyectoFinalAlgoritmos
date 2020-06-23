@@ -12,21 +12,25 @@ VentanaPrincipal::VentanaPrincipal() {
     init();
     this->ventanaescoger = 0;
     this->ventanaItinerario = 0;
+    this->ventanaLogin = 0;
 }//constructor
-
 
 VentanaPrincipal::~VentanaPrincipal() {
 }
-
 
 void VentanaPrincipal::init(){
     this->fixed.put(menuBar, 0, 0); // se agrega el menuBar al contenedor fixed
     this->menuArchivo.set_label("Usuario");
     this->menuItinerario.set_label("Itinerarios");
+    this->menuAdministrativo.set_label("Administracion");
+    
     this->menuBar.append(this->menuArchivo);
     this->menuBar.append(this->menuItinerario);
+    this->menuBar.append(this->menuAdministrativo);
+    
     this->menuArchivo.set_submenu(this->subMenuArchivo);
     this->menuItinerario.set_submenu(this->subMenuItinerario);
+    this->menuAdministrativo.set_submenu(this->subMenuAdministrativo);
     
       //agrega submenu a la barra y le asigna una accion
     this->menuEscogerAerolinea.set_label("Comprar Tiquete");
@@ -36,7 +40,11 @@ void VentanaPrincipal::init(){
     this->menuItinerarios.set_label("Itinerarios de vuelos");
     this->menuItinerarios.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaItinerario));
     this->subMenuItinerario.append(this->menuItinerarios);
-        
+    
+    this->menuItemAvion.set_label("Registro aviones");
+    this->menuItemAvion.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaLogin));
+    this->subMenuAdministrativo.append(this->menuItemAvion);
+    
     this->add(fixed);
     this->show_all_children();
 }//init
@@ -48,6 +56,19 @@ void VentanaPrincipal::aboutWinClose(){
 void VentanaPrincipal::aboutWinCloseVentanaItinerarios(){
     this->ventanaItinerario = 0;
 }//aboutWinCloseVentanaItinerarios
+
+void VentanaPrincipal::aboutWinCloseVentanaLogin() {
+    this->ventanaLogin = 0;
+}
+
+void VentanaPrincipal::abrirVentanaLogin() {
+    if (this->ventanaLogin != 0)
+            return;
+        
+    this->ventanaLogin = new VentanaLoginAdmin();
+    this->ventanaLogin->signal_hide().connect(sigc::mem_fun(*this, &VentanaPrincipal::aboutWinCloseVentanaLogin));
+    this->ventanaLogin->show();
+}
 
 void VentanaPrincipal::abrirVentanaEscogerAerolinea(){
     if (this->ventanaescoger != 0)
