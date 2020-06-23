@@ -11,6 +11,8 @@
 #include <gtkmm.h>
 #include <iostream>
 
+#include "VentanaPrincipalAdmin.h"
+
 using namespace std;
 
 class VentanaLoginAdmin : public Gtk::Window{
@@ -22,6 +24,7 @@ private:
     
     void init();
     void onButtonClickedIngresar();
+    void aboutWinClose();
     
     //Atributos
     Gtk::Fixed fixed;
@@ -33,6 +36,7 @@ private:
     Gtk::Entry etContrasena;
 
     Gtk::Button btnIngresar;
+    VentanaPrincipalAdmin* vPrincipal;
 };
 
 #endif /* VENTANALOGINADMIN_H */

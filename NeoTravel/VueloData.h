@@ -9,6 +9,7 @@
 #define VUELODATA_H
 #include <iostream>
 #include <string.h>
+#include <sstream>
 
 #include "Vuelo.h"
 #include "ListaEnlazadaCircularDoble.h"
@@ -22,12 +23,11 @@ public:
     virtual ~VueloData();
     void insertarVuelo(Vuelo* vuelo);
     void borrarVuelo(Vuelo* vuelo);
-    void actualizarVuelo(Vuelo* vuelo);
-    Vuelo* buscarVuelo(Vuelo* vuelo);
     ListaEnlazadaCircularDoble<Vuelo>* obtenerListaVuelos();
     Vuelo* obtenerSiguienteVuelo(Vuelo* vuelo);
     Vuelo* obtenerAnteriorVuelo(Vuelo* vuelo);
     Vuelo* firstInList();
+    Vuelo* buscarVuelo(string cOrigen,string cDestino);
     string toString();
 
 private:

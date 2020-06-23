@@ -60,3 +60,17 @@ ListaEnlazadaCircularDoble<Aerolinea>* AerolineaData::obtenerListaDeAerolineas()
 Aerolinea* AerolineaData::firstInList() {
     return ListaAerolineas->firstInlist();
 }
+
+Aerolinea* AerolineaData::buscarAerolinea(string aerolinea) {
+Aerolinea* aux = ListaAerolineas->firstInlist();
+    if(aux->getNombre().compare(aerolinea)==0){
+        return aux;
+    }else{
+        while(aux!=ListaAerolineas->firstInlist()){
+            aux=ListaAerolineas->obtenerSiguiente(aux);
+            if(aux->getNombre().compare(aerolinea)==0){
+                return aux;
+            }
+        }
+    }
+}

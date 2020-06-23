@@ -23,6 +23,7 @@ public:
     Aerolinea* obtenerSiguiente(Aerolinea* aerolinea);
     Aerolinea* obtenerAnterior(Aerolinea* aerolinea);
     Aerolinea* firstInList();
+    Aerolinea* buscarAerolinea(string aerolinea);
     void mostrar();
 protected:
     AerolineaData();

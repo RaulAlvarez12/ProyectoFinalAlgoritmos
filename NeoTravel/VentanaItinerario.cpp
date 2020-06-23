@@ -9,9 +9,8 @@
 #include "AerolineaData.h"
 
 VentanaItinerario::VentanaItinerario() {
-    //this->aerolineaData->getInstance();
-    this->set_size_request(800, 600);
-    this->set_title("Itinerarios de las aerolineas");
+    this->set_size_request(800, 300);
+    this->set_title("Itinerarios ");
     init();
     this->show_all_children();
 }//Constructor
@@ -50,8 +49,7 @@ void VentanaItinerario::init(){
     this->btnDerVuelo.signal_clicked().connect(sigc::mem_fun(*this, &VentanaItinerario::onButtonClickedDerVuelo));
     this->fixed.put(this->btnDerVuelo, 300, 150);
     
-    
-//    this->infoItinerario=vueloActual.
+
     this->lbl_Itinerario.set_label("Itinerario");
     this->fixed.put(this->lbl_Itinerario, 600, 20);
     this->lbl_ItinerarioActual.set_label(this->vueloActual->getItinerario()->toString());

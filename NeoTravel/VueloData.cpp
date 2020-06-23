@@ -64,18 +64,22 @@ void VueloData::insertarVuelo(Vuelo* vuelo) {
 void VueloData::borrarVuelo(Vuelo* vuelo) {
     this->listaVuelos->borrar(vuelo);
 }
-
-/*################PENDIENTE DE HACER#####################*/
-Vuelo* VueloData::buscarVuelo(Vuelo* vuelo) {
-
-}
-
-void VueloData::actualizarVuelo(Vuelo* vuelo) {
-
-}
-
 ListaEnlazadaCircularDoble<Vuelo>* VueloData::obtenerListaVuelos() {
+    return listaVuelos;
+}
 
+Vuelo* VueloData::buscarVuelo(string cOrigen, string cDestino) {
+Vuelo* aux = listaVuelos->firstInlist();
+    if(aux->getCiudadOrigen()->getNombre().compare(cOrigen)==0 && aux->getciudadDestino()->getNombre().compare(cDestino)==0){
+        return aux;
+    }else{
+        while(aux!=listaVuelos->firstInlist()){
+            aux=listaVuelos->obtenerSiguiente(aux);
+            if(aux->getCiudadOrigen()->getNombre().compare(cOrigen)==0 && aux->getciudadDestino()->getNombre().compare(cDestino)==0){
+                return aux;
+            }
+        }
+    }
 }
 
 string VueloData::toString() {
