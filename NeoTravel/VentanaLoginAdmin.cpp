@@ -45,8 +45,11 @@ void VentanaLoginAdmin::aboutWinClose() {
 }
 
 void VentanaLoginAdmin::onButtonClickedIngresar() {
+    
+    if(strcmp(etNombre.get_text().c_str(), "admin") == 0 && strcmp(etContrasena.get_text().c_str(), "admin") == 0){
     vPrincipal = new VentanaPrincipalAdmin();
     this->vPrincipal->signal_hide().connect(sigc::mem_fun(*this, &VentanaLoginAdmin::aboutWinClose));
     vPrincipal->show();
     this->close();
+    }
 }
