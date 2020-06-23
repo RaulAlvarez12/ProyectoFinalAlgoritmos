@@ -1,14 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-#include "VentanaEscogerAerolinea.h"
-#include "AerolineaData.h"
-#include <iostream>
-using namespace std;
-
 /* 
  * File:   VentanaEscogerAerolinea.cpp
  * Author: geraldi
@@ -16,22 +5,25 @@ using namespace std;
  * Created on 8 de junio de 2020, 02:36 PM
  */
 
+#include "VentanaEscogerAerolinea.h"
+#include "AerolineaData.h"
+#include <iostream>
+
+using namespace std;
 
 VentanaEscogerAerolinea::VentanaEscogerAerolinea() {
-    this->aerolineaData = new AerolineaData();
+    this->aerolineaData = AerolineaData::getInstance();
     this->set_size_request(300, 200);
     this->set_title("Escoger Aerolinea");
-
     init();
     this->show_all_children();
 }
 
 VentanaEscogerAerolinea::~VentanaEscogerAerolinea() {
-
 }
 
 void VentanaEscogerAerolinea::init() {
-    this->aerolineaActual =aerolineaData->firstInList();
+    this->aerolineaActual =aerolineaData->getInstance()->firstInList();
     
     this->lblBienvenido.set_label("Bienvenido Escoja su aerolinea preferida");
     this->fixed.put(this->lblBienvenido, 20, 20);
@@ -58,12 +50,12 @@ void VentanaEscogerAerolinea::init() {
 }
 
 void VentanaEscogerAerolinea::onButtonClickedArriba() {
-    aerolineaActual = aerolineaData->obtenerSiguiente(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
     this->lblAerolineaInfo.set_label(aerolineaActual->getNombre());
 }
 
 void VentanaEscogerAerolinea::onButtonClickedAbajo() {
-    aerolineaActual = aerolineaData->obtenerAnterior(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerAnterior(aerolineaActual);
     this->lblAerolineaInfo.set_label(aerolineaActual->getNombre());
 }
 
@@ -87,5 +79,4 @@ bool VentanaEscogerAerolinea::on_key_press_event(GdkEventKey* event) {
     } else if (event->keyval == GDK_KEY_Up) {
         onButtonClickedArriba();
     }
-
 }

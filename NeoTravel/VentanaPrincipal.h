@@ -13,6 +13,7 @@
 
 #include "VentanaEscogerAerolinea.h"
 #include "VentanaItinerario.h"
+#include "VentanaLoginAdmin.h"
 
 class VentanaPrincipal : public Gtk::Window {
 public:
@@ -23,21 +24,30 @@ private:
     
     void aboutWinClose();
     void aboutWinCloseVentanaItinerarios();
+    void aboutWinCloseVentanaLogin();
     
+    void abrirVentanaLogin();
     void abrirVentanaEscogerAerolinea();
     void abrirVentanaItinerario();
 
     //Atributos
     VentanaEscogerAerolinea* ventanaescoger;
     VentanaItinerario* ventanaItinerario;
+    VentanaLoginAdmin* ventanaLogin;
     
     Gtk::MenuBar menuBar;
+    
     Gtk::MenuItem menuArchivo;
     Gtk::MenuItem menuItinerario;//item del menu bar
+    Gtk::MenuItem menuAdministrativo;
+    
     Gtk::Menu subMenuArchivo; //abre el contenedor submenu
     Gtk::Menu subMenuItinerario;
+    Gtk::Menu subMenuAdministrativo;//Contiene opciones del modulo administrativo
+    
     Gtk::ImageMenuItem menuEscogerAerolinea;
     Gtk::ImageMenuItem menuItinerarios;//Abre la ventana de itinerarios
+    Gtk::ImageMenuItem menuItemAvion;
 
     Gtk::Fixed fixed; // contenedor
 

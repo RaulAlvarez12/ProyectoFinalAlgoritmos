@@ -9,7 +9,7 @@
 #include "AerolineaData.h"
 
 VentanaItinerario::VentanaItinerario() {
-    this->aerolineaData = new AerolineaData();
+    //this->aerolineaData->getInstance();
     this->set_size_request(800, 600);
     this->set_title("Itinerarios de las aerolineas");
     init();
@@ -21,8 +21,7 @@ VentanaItinerario::~VentanaItinerario() {
 }//destructor
 
 void VentanaItinerario::init(){
-    
-    this->aerolineaActual = aerolineaData->firstInList();
+    this->aerolineaActual = aerolineaData->getInstance()->firstInList();
     this->vueloActual = aerolineaActual->vueloData->firstInList();
     
     this->lblAerolinea.set_label("Aerolinea");
@@ -63,7 +62,7 @@ void VentanaItinerario::init(){
 }//init
 
 void VentanaItinerario::onButtonClickedIzqAerolinea(){
-    aerolineaActual = aerolineaData->obtenerSiguiente(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
     this->vueloActual = this->aerolineaActual->vueloData->firstInList();
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
     this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
@@ -71,7 +70,7 @@ void VentanaItinerario::onButtonClickedIzqAerolinea(){
 }//onButtonClickedIzqAerolinea
 
 void VentanaItinerario::onButtonClickedDerAerolinea(){
-    aerolineaActual = aerolineaData->obtenerAnterior(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerAnterior(aerolineaActual);
     this->vueloActual = this->aerolineaActual->vueloData->firstInList();
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
     this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());

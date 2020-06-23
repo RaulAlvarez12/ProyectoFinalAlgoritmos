@@ -180,6 +180,20 @@ public:
             }
         }
     }
+    
+    T* buscarObjeto(T* objeto){
+        if(!isEmpty()){
+            ptrLista aux;
+            aux = inicio;
+            if(aux->elemento == objeto) return aux->elemento;
+            
+            aux = aux->sgte;
+            while (aux != inicio) {
+                if (aux->elemento == objeto) return aux->elemento;
+                aux = aux->sgte;
+            }
+        }
+    }//buscarObjeto
 
     T* firstInlist() {
         return inicio->elemento;
