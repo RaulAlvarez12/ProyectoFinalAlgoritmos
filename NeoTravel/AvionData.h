@@ -24,6 +24,7 @@ public:
     Avion* obtenerSiguienteAvion(Avion* avion);
     Avion* obtenerAnteriorAvion(Avion* avion);
     Avion* firstInList();
+    Avion* buscarAvion(string avion);
     
     
 protected:

@@ -9,7 +9,7 @@
 #define LISTAENLAZADACIRCULARDOBLE_H
 
 #include <string.h>
-
+#include <sstream>
 using namespace std;
 
 template <typename T>
@@ -182,7 +182,7 @@ public:
     }
     
     T* buscarObjeto(T* objeto){
-        if(!isEmpty()){
+        if(!isEmpty() && exist(objeto)){
             ptrLista aux;
             aux = inicio;
             if(aux->elemento == objeto) return aux->elemento;

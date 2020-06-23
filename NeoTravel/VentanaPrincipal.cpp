@@ -41,7 +41,7 @@ void VentanaPrincipal::init(){
     this->menuItinerarios.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaItinerario));
     this->subMenuItinerario.append(this->menuItinerarios);
     
-    this->menuItemAvion.set_label("Registro aviones");
+    this->menuItemAvion.set_label("Modulo Admin");
     this->menuItemAvion.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaLogin));
     this->subMenuAdministrativo.append(this->menuItemAvion);
     

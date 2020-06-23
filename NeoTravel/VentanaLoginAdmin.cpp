@@ -40,7 +40,13 @@ void VentanaLoginAdmin::init() {
     this->show_all_children();
 }
 
+void VentanaLoginAdmin::aboutWinClose() {
+    vPrincipal=0;
+}
+
 void VentanaLoginAdmin::onButtonClickedIngresar() {
-    if(strcmp(etNombre.get_text().c_str(), "admin") == 0 && strcmp(etContrasena.get_text().c_str(), "admin") == 0)
-        cout << "Login aceptado" << endl;
+    vPrincipal = new VentanaPrincipalAdmin();
+    this->vPrincipal->signal_hide().connect(sigc::mem_fun(*this, &VentanaLoginAdmin::aboutWinClose));
+    vPrincipal->show();
+    this->close();
 }
