@@ -40,7 +40,7 @@ private:
     
 protected:
     
-    bool on_key_press_event(GdkEventKey* event);
+//    bool on_key_press_event(GdkEventKey* event);
 };
 
 #endif /* VENTANALOGINADMIN_H */
