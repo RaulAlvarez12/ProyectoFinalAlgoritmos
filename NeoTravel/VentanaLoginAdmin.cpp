@@ -54,8 +54,8 @@ void VentanaLoginAdmin::onButtonClickedIngresar() {
     }
 }
 
-bool VentanaLoginAdmin::on_key_press_event(GdkEventKey* event) {
-//    if (event->keyval == GDK_KEY_) {
-//        onButtonClickedIngresar();
-//    }
-}
+//bool VentanaLoginAdmin::on_key_press_event(GdkEventKey* event) {
+////    if (event->keyval == GDK_KEY_) {
+////        onButtonClickedIngresar();
+////    }
+//}

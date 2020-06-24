@@ -22,15 +22,10 @@ public:
     Aerolinea();
     virtual ~Aerolinea();
     string getNombre();
-    //vector<Vuelo*> getVuelos();
-    void agregarVuelo(Vuelo* vuelo);
-    Vuelo* vueloActual(int posicion);
-    Vuelo* primerVuelo(); //Devuelve el primer vuelo que tiene el vector de vuelos
     string toString();
     VueloData* vueloData;
-    
+    void setNombre(string nombre);
 private:
-    int posicion;
     string nombreAerolinea;
     //vector<Vuelo*> vuelos;
     

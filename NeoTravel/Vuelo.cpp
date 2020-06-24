@@ -14,6 +14,7 @@ Vuelo::Vuelo(Itinerario* itinerario, Ciudad* ciudadOrigen, Ciudad* ciudadDestino
 }
 
 Vuelo::Vuelo() {
+    this->itinerario = new Itinerario();
 }
 
 Vuelo::~Vuelo() {

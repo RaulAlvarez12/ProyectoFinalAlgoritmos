@@ -12,7 +12,7 @@ VueloData::VueloData() {
 
     Ciudad* cOrigen = new Ciudad("San Jose");
     Ciudad* cDestino = new Ciudad("Estados Unidos");
-    Avion* avion = new Avion("Boeing", 80, 20, 60);
+    Avion* avion = new Avion("Boeing 739", 80, 20, 60);
     Horario* horario1 = new Horario(1, 3);
     Horario* horario2 = new Horario(4, 6);
     Cola* cola = new Cola();
@@ -73,6 +73,7 @@ Vuelo* aux = listaVuelos->firstInlist();
     if(aux->getCiudadOrigen()->getNombre().compare(cOrigen)==0 && aux->getciudadDestino()->getNombre().compare(cDestino)==0){
         return aux;
     }else{
+        aux=listaVuelos->obtenerSiguiente(aux);
         while(aux!=listaVuelos->firstInlist()){
             aux=listaVuelos->obtenerSiguiente(aux);
             if(aux->getCiudadOrigen()->getNombre().compare(cOrigen)==0 && aux->getciudadDestino()->getNombre().compare(cDestino)==0){

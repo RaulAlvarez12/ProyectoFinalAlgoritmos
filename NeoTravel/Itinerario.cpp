@@ -9,6 +9,7 @@
 
 Itinerario::Itinerario() {
     this->colaPrioridad = new Cola();
+    colaPrioridad->encolar(new Horario(7,8));
     this->avion = new Avion();
 }
 
@@ -41,3 +42,5 @@ string Itinerario::toString() {
     s << " " << this->avion->toString() << this->colaPrioridad->toString();
     return s.str();
 }
+
+

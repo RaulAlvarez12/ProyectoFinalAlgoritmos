@@ -14,6 +14,13 @@
 #include "VentanaEscogerAerolinea.h"
 #include "VentanaItinerario.h"
 #include "VentanaLoginAdmin.h"
+#include "AerolineaData.h"
+#include "CiudadData.h"
+#include "AvionData.h"
+#include "Avion.h"
+#include "Ciudad.h"
+#include "Itinerario.h"
+#include"Horario.h"
 
 class VentanaPrincipal : public Gtk::Window {
 public:
@@ -51,6 +58,9 @@ private:
 
     Gtk::Fixed fixed; // contenedor
 
+    AerolineaData* aerolineaData;
+    CiudadData* ciudadData;
+    AvionData* avionData;
 };
 
 #endif /* VENTANAPRINCIPAL_H */
