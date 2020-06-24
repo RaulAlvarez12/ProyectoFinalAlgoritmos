@@ -13,6 +13,7 @@
 
 #include "Cola.h"
 #include "Avion.h"
+#include "Horario.h"
 
 using namespace std;
 

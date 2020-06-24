@@ -316,3 +316,21 @@ Horario* Cola::obtenerSiguienteHorario(Horario* horario) {
     
 }
 
+void Cola::eliminar(Horario* horario) {
+
+        Horario* horarioAux;
+        Cola* colaAux = new Cola();
+        while(!isEmpty()){
+            horarioAux = desencolar();
+            if(horario!=horarioAux){
+              colaAux->encolar(horarioAux);
+            }
+            
+            
+        }
+        while(!colaAux->isEmpty()){
+            encolar(colaAux->desencolar());
+        }
+        
+    }
+

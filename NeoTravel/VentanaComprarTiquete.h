@@ -53,9 +53,11 @@ private:
     Gtk::Button btnComprar;
     Gtk::Button btnSiguienteVuelo;
     Gtk::Button btnAnteriorVuelo;
+    
     Gtk::Button btnSiguienteHorario;
     Gtk::Button btnAnteriorHorario;
     Horario* horarioActual;
+    
     VentanaFactura* vFactura;
     Aerolinea* aerolineaActual;
 };

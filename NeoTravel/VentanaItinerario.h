@@ -13,7 +13,7 @@
 
 #include "Aerolinea.h"
 #include "AerolineaData.h"
-
+#include "Vuelo.h"
 using namespace std;
 
 class VentanaItinerario : public Gtk::Window{

@@ -44,6 +44,7 @@ public:
     ptrCola cola;
     Horario* obtenerSiguienteHorario(Horario* horario);
     Horario* obtenerAnteriorHorario(Horario* horario);
+    void eliminar(Horario* horario);
     
 
 private:
