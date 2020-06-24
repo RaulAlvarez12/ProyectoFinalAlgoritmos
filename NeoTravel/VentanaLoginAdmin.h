@@ -37,6 +37,10 @@ private:
 
     Gtk::Button btnIngresar;
     VentanaPrincipalAdmin* vPrincipal;
+    
+protected:
+    
+    bool on_key_press_event(GdkEventKey* event);
 };
 
 #endif /* VENTANALOGINADMIN_H */
