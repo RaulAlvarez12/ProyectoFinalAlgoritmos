@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaPrincipalAdmin.cpp
  * Author: geraldi
@@ -12,7 +11,31 @@ VentanaPrincipalAdmin::VentanaPrincipalAdmin() {
     this->set_size_request(400, 300);
     init();
     this->set_title("Administracion");
-    this->show_all_children();
+    this->vagregarAvion = 0;
+    this->vagregarAerolinea = 0;
+    this->vagregarCiudad = 0;
+    this->vagregarHorario = 0;
+    this->vagregarVuelo = 0;
+
+    this->veleminarAvion = 0;
+    this->veleminarAerolinea = 0;
+    this->veleminarCiudad = 0;
+    this->veleminarHorario = 0;
+    this->veliminarVuelo = 0;
+
+    this->vBuscarAvion = 0;
+    this->vBuscarAerolinea = 0;
+    this->vBuscarCiudad = 0;
+    this->vBuscarHorario = 0;
+    this->vBuscarVuelo = 0;
+
+    this->vActualizarAerolinea = 0;
+    this->vActualizarAvionLista = 0;
+    this->vActualizarAvionVuelo = 0;
+    this->vActualizarCiudad = 0;
+    this->vActualizarHorario = 0;
+    this->vActualizarVuelo = 0;
+    //this->show_all_children();
 }
 
 VentanaPrincipalAdmin::VentanaPrincipalAdmin(const VentanaPrincipalAdmin& orig) {

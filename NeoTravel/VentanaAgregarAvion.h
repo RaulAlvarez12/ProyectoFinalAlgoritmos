@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaAgregarAvion.h
  * Author: geraldi
@@ -8,8 +7,11 @@
 
 #ifndef VENTANAAGREGARAVION_H
 #define VENTANAAGREGARAVION_H
-#include <bits/stl_tempbuf.h>
+
 #include <gtkmm.h>
+
+#include "Avion.h"
+#include "AvionData.h"
 
 class VentanaAgregarAvion : public Gtk::Window{
 public:
@@ -17,8 +19,28 @@ public:
     VentanaAgregarAvion(const VentanaAgregarAvion& orig);
     virtual ~VentanaAgregarAvion();
 private:
+    
+    void init();
+    void onButtonClickedGuardar();
+    
+    //Atributos
+    Gtk::Fixed fixed;
+    
+    Gtk::Label lblNombreAvion;
+    Gtk::Label lblCantidadEspacios;
+    Gtk::Label lblCantidadVuelos;
+    Gtk::Label lblHorasDeVuelo;
+    
 
+    Gtk::Entry etNombreAvion;
+    Gtk::Entry etCantidadEspacios;
+    Gtk::Entry etCantidadVuelos;
+    Gtk::Entry etHorasDeVuelo;
+
+    Gtk::Button btnGuardar;
+    
+    AvionData* avionData;
+    
 };
 
 #endif /* VENTANAAGREGARAVION_H */
-

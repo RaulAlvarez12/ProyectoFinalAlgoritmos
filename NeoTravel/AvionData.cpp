@@ -43,6 +43,10 @@ Avion* AvionData::firstInList() {
     return ListaAviones->firstInlist();
 }
 
+Avion* AvionData::lastInList() {
+    return ListaAviones->lastInList();
+}
+
 Avion* AvionData::buscarAvion(string avion) {
 
     Avion* aux = ListaAviones->firstInlist();
@@ -57,5 +61,4 @@ Avion* AvionData::buscarAvion(string avion) {
         }
     }
     
-
 }

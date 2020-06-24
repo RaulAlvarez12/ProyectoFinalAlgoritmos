@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaPrincipalAdmin.h
  * Author: geraldi

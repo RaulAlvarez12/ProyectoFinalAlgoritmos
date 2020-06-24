@@ -8,9 +8,7 @@
 #ifndef VENTANAESCOGERAEROLINEA_H
 #define VENTANAESCOGERAEROLINEA_H
 
-
 #include "VentanaEscogerAerolinea.h"
-#include <bits/stl_tempbuf.h>
 #include <gtkmm.h>
 #include<sstream>
 #include<iostream>
@@ -25,7 +23,6 @@ public:
     VentanaEscogerAerolinea();
     virtual ~VentanaEscogerAerolinea();
 private:
-
 
     void init();
     void onButtonClickedArriba();
@@ -43,6 +40,7 @@ private:
     Aerolinea* aerolineaActual;
     AerolineaData* aerolineaData;
     VentanaComprarTiquete* vTiquete;
+    
 protected:
     bool on_key_press_event(GdkEventKey* event);
 

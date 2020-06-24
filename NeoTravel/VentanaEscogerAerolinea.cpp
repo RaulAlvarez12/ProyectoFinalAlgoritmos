@@ -16,7 +16,6 @@ VentanaEscogerAerolinea::VentanaEscogerAerolinea() {
     this->set_size_request(300, 200);
     this->set_title("Escoger Aerolinea");
     init();
-    this->show_all_children();
 }
 
 VentanaEscogerAerolinea::~VentanaEscogerAerolinea() {
