@@ -7,12 +7,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaLoginAdmin.h</file>
-            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/AerolineaData.h</file>
-            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/AvionData.h</file>
-            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaPrincipal.cpp</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaAgregarAvion.h</file>
             <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaLoginAdmin.cpp</file>
-            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/AerolineaData.cpp</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaAgregarAvion.cpp</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaEliminarAvion.h</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaLoginAdmin.h</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaEscogerAerolinea.h</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaEscogerAerolinea.cpp</file>
+            <file>file:/home/raul/NetBeansProjects/2020/Algoritmos/RepositorioGitHub/ProyectoFinalAlgoritmos/NeoTravel/VentanaEliminarAvion.cpp</file>
         </group>
     </open-files>
 </project-private>

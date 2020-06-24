@@ -7,11 +7,12 @@
  */
 
 #include <cstring>
+#include <cairomm-1.0/cairomm/enums.h>
 
 #include "VentanaLoginAdmin.h"
 
 VentanaLoginAdmin::VentanaLoginAdmin() {
-    this->set_size_request(300, 300);
+    this->set_size_request(300, 175);
     this->set_title("Login modulo administrativo");
     init();
     this->show_all_children();
@@ -24,18 +25,17 @@ void VentanaLoginAdmin::init() {
 
 
     this->lblNombre.set_label("Nombre:");
-    this->fixed.put(this->lblNombre, 20, 20);
-    this->fixed.put(this->etNombre, 175, 20);
+    this->fixed.put(this->lblNombre, 20, 22);
+    this->fixed.put(this->etNombre, 110, 18);
 
     this->lblContrasena.set_label("Contraseña:");
     this->etContrasena.set_visibility(false);
-    this->fixed.put(this->lblContrasena, 20, 60);
-    this->fixed.put(this->etContrasena, 175, 60);
+    this->fixed.put(this->lblContrasena, 20, 62);
+    this->fixed.put(this->etContrasena, 110, 58);
 
     this->btnIngresar.set_label("Ingresar");
     this->btnIngresar.signal_clicked().connect(sigc::mem_fun(*this, &VentanaLoginAdmin::onButtonClickedIngresar));
-    this->fixed.put(this->btnIngresar, 20, 225);
-
+    this->fixed.put(this->btnIngresar, 20, 120);
     this->add(fixed);
     this->show_all_children();
 }
@@ -54,8 +54,8 @@ void VentanaLoginAdmin::onButtonClickedIngresar() {
     }
 }
 
-bool VentanaLoginAdmin::on_key_press_event(GdkEventKey* event) {
+//bool VentanaLoginAdmin::on_key_press_event(GdkEventKey* event) {
 //    if (event->keyval == GDK_KEY_) {
 //        onButtonClickedIngresar();
 //    }
-}
+//}
