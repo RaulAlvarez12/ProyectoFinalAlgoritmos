@@ -77,7 +77,7 @@ void VentanaEliminarAvion::onButtonClickedEliminar() {
         if (!(avionData->getInstance()->obtenerListaDeAviones()->isEmpty())) {
             avionActual = avionData->getInstance()->firstInList();
             this->lblAvion.set_label(avionActual->toString());
-        }else{
+        } else {
             this->close();
         }
     }
