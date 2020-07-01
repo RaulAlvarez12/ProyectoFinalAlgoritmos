@@ -85,15 +85,20 @@ void VentanaActualizarAvionLista::init() {
 
 void VentanaActualizarAvionLista::onButtonClickedActualizar() {//FALTA QUE VALIDE SI LOS CAMPOS QUE REQUIEREN NUMEROS ESTOS SEAN RELLENADOS CON NUMEROS
     if (strcmp(this->etNombreAvion.get_text().c_str(), "") != 0 && strcmp(this->etCantidadEspacios.get_text().c_str(), "") != 0 && strcmp(this->etCantidadVuelos.get_text().c_str(), "") != 0 && strcmp(this->etHorasVuelos.get_text().c_str(), "") != 0) {
-        Avion* avionAux = this->avionActual;
+        this->avionActual = this->avionData->getInstance()->buscarAvion(this->cbAviones.get_active_text().c_str());
         this->avionActual->setNombre(this->etNombreAvion.get_text().c_str());
         this->avionActual->setCantidadEspacios(atoi(this->etCantidadEspacios.get_text().c_str()));
         this->avionActual->setCantidadVuelos(atoi(this->etCantidadVuelos.get_text().c_str()));
         this->avionActual->setHorasVuelo(atoi(this->etHorasVuelos.get_text().c_str()));
         Gtk::MessageDialog dialogo(*this, "Actualización exitosa", false, Gtk::MESSAGE_INFO);
         dialogo.run();
-        this->avionData->getInstance()->obtenerListaDeAviones()->borrar(avionAux);
-        this->avionData->getInstance()->agregarAvion(this->avionActual);
+        this->cbAviones.remove_all();
+        this->avionActual = this->avionData->getInstance()->firstInList();
+        for (int i = 0; i < avionData->getInstance()->obtenerListaDeAviones()->getSize(); i++) {
+            this->cbAviones.append(this->avionActual->getNombreAvion());
+            this->avionActual = this->avionData->getInstance()->obtenerSiguienteAvion(avionActual);
+        }
+        cbAviones.set_active_text(this->avionData->getInstance()->firstInList()->getNombreAvion());
     } else {
         Gtk::MessageDialog dialogo(*this, "Actualización fallida:", false, Gtk::MESSAGE_WARNING);
         dialogo.set_secondary_text("Es necesario completar todos los espacios vacios");

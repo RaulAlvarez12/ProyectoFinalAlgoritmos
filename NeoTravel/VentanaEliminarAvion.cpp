@@ -33,7 +33,6 @@ void VentanaEliminarAvion::init() {
         this->btnIzquierda.signal_clicked().connect(sigc::mem_fun(*this, &VentanaEliminarAvion::onButtonClickedIzquierda));
         this->fixed.put(this->btnIzquierda, 10, 140);
 
-
         this->btnEliminarAvion.set_label("Eliminar");
         this->btnEliminarAvion.signal_clicked().connect(sigc::mem_fun(*this, &VentanaEliminarAvion::onButtonClickedEliminar));
         this->fixed.put(this->btnEliminarAvion, 10, 200);

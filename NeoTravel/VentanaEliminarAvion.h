@@ -18,6 +18,10 @@ public:
     VentanaEliminarAvion();
     VentanaEliminarAvion(const VentanaEliminarAvion& orig);
     virtual ~VentanaEliminarAvion();
+
+protected:
+    bool on_key_press_event(GdkEventKey* event);
+
 private:
 
     void init();
@@ -35,8 +39,6 @@ private:
     Avion* avionActual;
     AvionData* avionData;
 
-protected:
-    bool on_key_press_event(GdkEventKey* event);
 };
 
 #endif /* VENTANAELIMINARAVION_H */

@@ -1,4 +1,3 @@
-
 /* 
  * File:   CiudadData.cpp
  * Author: geraldi
@@ -8,55 +7,53 @@
 
 #include "CiudadData.h"
 #include "ListaEnlazadaCircularDoble.h"
-CiudadData* CiudadData::instance=NULL;
+CiudadData* CiudadData::instance = NULL;
 
 CiudadData::CiudadData() {
 }
 
-
-
 void CiudadData::agregarCiudad(Ciudad* ciudad) {
-    ListaCiudad->insertar(ciudad);
+    this->ListaCiudad->insertar(ciudad);
 }
 
 void CiudadData::eliminarCiudad(Ciudad* ciudad) {
-    ListaCiudad->borrar(ciudad);
+    this->ListaCiudad->borrar(ciudad);
 }
 
 Ciudad* CiudadData::firstInList() {
-    return ListaCiudad->firstInlist();
+    return this->ListaCiudad->firstInlist();
 }
 
 CiudadData* CiudadData::getInstance() {
-if (instance == NULL) {
+    if (instance == NULL) {
         instance = new CiudadData();
     }
     return instance;
 }
 
 Ciudad* CiudadData::obtenerAnteriorCiudad(Ciudad* ciudad) {
-    return ListaCiudad->obtenerAnterior(ciudad);
+    return this->ListaCiudad->obtenerAnterior(ciudad);
 }
 
 ListaEnlazadaCircularDoble<Ciudad>* CiudadData::obtenerListaDeCiudades() {
-    return ListaCiudad;
+    return this->ListaCiudad;
 }
 
 Ciudad* CiudadData::obtenerSiguienteCiudad(Ciudad* ciudad) {
-    return ListaCiudad->obtenerSiguiente(ciudad);
+    return this->ListaCiudad->obtenerSiguiente(ciudad);
 }
 
 Ciudad* CiudadData::buscarCiudad(string ciudad) {
-    Ciudad* aux = ListaCiudad->firstInlist();
-    if(aux->getNombre().compare(ciudad)==0){
+    Ciudad* aux = this->ListaCiudad->firstInlist();
+    if (aux->getNombre().compare(ciudad) == 0) {
         return aux;
-    }else{
-        while(aux!=ListaCiudad->firstInlist()){
-            aux=ListaCiudad->obtenerSiguiente(aux);
-            if(aux->getNombre().compare(ciudad)==0){
+    } else {
+        aux = obtenerSiguienteCiudad(aux);
+        while (aux != this->ListaCiudad->firstInlist()) {
+            aux = this->ListaCiudad->obtenerSiguiente(aux);
+            if (aux->getNombre().compare(ciudad) == 0) {
                 return aux;
             }
         }
     }
-    
 }

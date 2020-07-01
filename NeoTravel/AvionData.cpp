@@ -53,6 +53,7 @@ Avion* AvionData::buscarAvion(string avion) {
     if(aux->getNombreAvion().compare(avion)==0){
         return aux;
     }else{
+        aux = obtenerSiguienteAvion(aux);
         while(aux!=ListaAviones->firstInlist()){
             aux=ListaAviones->obtenerSiguiente(aux);
             if(aux->getNombreAvion().compare(avion)==0){

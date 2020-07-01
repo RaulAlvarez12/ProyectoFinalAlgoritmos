@@ -1,4 +1,3 @@
-
 /* 
  * File:   CiudadData.h
  * Author: geraldi
@@ -22,15 +21,14 @@ public:
     Ciudad* obtenerAnteriorCiudad(Ciudad* ciudad);
     Ciudad* firstInList();
     Ciudad* buscarCiudad(string ciudad);
-    
-    
+
+
 protected:
-   CiudadData();
-    
+    CiudadData();
+
 private:
     static CiudadData* instance;
-    ListaEnlazadaCircularDoble<Ciudad>* ListaCiudad= new ListaEnlazadaCircularDoble<Ciudad>;
+    ListaEnlazadaCircularDoble<Ciudad>* ListaCiudad = new ListaEnlazadaCircularDoble<Ciudad>;
 };
 
 #endif /* CIUDADDATA_H */
-
