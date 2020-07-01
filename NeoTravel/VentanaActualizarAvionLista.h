@@ -11,7 +11,6 @@
 #include <gtkmm.h>
 #include <gtkmm-3.0/gtkmm/comboboxtext.h>
 #include <string.h>
-#include <iostream>
 
 #include "Avion.h"
 #include "AvionData.h"

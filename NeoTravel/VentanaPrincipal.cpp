@@ -42,7 +42,7 @@ void VentanaPrincipal::init() {
     aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Avianca"));
 
 
-            this->fixed.put(menuBar, 0, 0); // se agrega el menuBar al contenedor fixed
+    this->fixed.put(menuBar, 0, 0); // se agrega el menuBar al contenedor fixed
     this->menuArchivo.set_label("Usuario");
     this->menuItinerario.set_label("Itinerarios");
     this->menuAdministrativo.set_label("Administracion");

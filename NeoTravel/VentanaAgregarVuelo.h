@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaAgregarVuelo.h
  * Author: geraldi
@@ -8,7 +7,6 @@
 
 #ifndef VENTANAAGREGARVUELO_H
 #define VENTANAAGREGARVUELO_H
-#include <bits/stl_tempbuf.h>
 #include <gtkmm.h>
 
 #include "Ciudad.h"
