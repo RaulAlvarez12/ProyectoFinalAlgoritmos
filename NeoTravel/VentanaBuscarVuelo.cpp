@@ -9,7 +9,7 @@
 #include "VentanaBuscarVuelo.h"
 
 VentanaBuscarVuelo::VentanaBuscarVuelo() {
-        this->set_size_request(400, 500);
+    this->set_size_request(400, 500);
     this->set_title("Buscar vuelo");
     init();
     this->show_all_children();
@@ -22,7 +22,7 @@ VentanaBuscarVuelo::~VentanaBuscarVuelo() {
 }
 
 void VentanaBuscarVuelo::init() {
-this->aerolineaActual = aerolineaData->getInstance()->firstInList();
+    this->aerolineaActual = aerolineaData->getInstance()->firstInList();
     this->vueloActual = aerolineaActual->vueloData->firstInList();
 
     this->lblAerolinea.set_label("Aerolinea");
@@ -63,7 +63,7 @@ this->aerolineaActual = aerolineaData->getInstance()->firstInList();
 
 void VentanaBuscarVuelo::onButtonClickedDerAerolinea() {
     this->lblData.set_text("Informacion:\n");
-aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
     if (!aerolineaActual->vueloData->obtenerListaVuelos()->isEmpty()) {
         this->vueloActual = this->aerolineaActual->vueloData->firstInList();
@@ -75,19 +75,19 @@ aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual
 
 void VentanaBuscarVuelo::onButtonClickedDerVuelo() {
     this->lblData.set_text("Informacion:\n");
- this->vueloActual = this->aerolineaActual->vueloData->obtenerSiguienteVuelo(this->vueloActual);
+    this->vueloActual = this->aerolineaActual->vueloData->obtenerSiguienteVuelo(this->vueloActual);
     this->lblVueloActual.set_label(this->vueloActual->getCiudadOrigen()->toString() + " a " + this->vueloActual->getciudadDestino()->toString());
 
 }
 
 void VentanaBuscarVuelo::onButtonClickedBuscar() {
-    this->lblData.set_text("Informacion:\n"+vueloActual->toString());
+    this->lblData.set_text("Informacion:\n" + vueloActual->toString());
 
 }
 
 void VentanaBuscarVuelo::onButtonClickedIzqAerolinea() {
     this->lblData.set_text("Informacion:\n");
- aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
+    aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
     if (!aerolineaActual->vueloData->obtenerListaVuelos()->isEmpty()) {
         this->vueloActual = this->aerolineaActual->vueloData->firstInList();

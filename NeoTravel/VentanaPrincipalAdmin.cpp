@@ -31,7 +31,7 @@ VentanaPrincipalAdmin::VentanaPrincipalAdmin() {
 
     this->vActualizarAerolinea = 0;
     this->vActualizarAvionLista = 0;
-    this->vActualizarAvionVuelo = 0;
+//    this->vActualizarAvionVuelo = 0;
     this->vActualizarCiudad = 0;
     this->vActualizarHorario = 0;
     this->vActualizarVuelo = 0;
@@ -74,13 +74,13 @@ void VentanaPrincipalAdmin::init() {
     this->menuElmininarAvion.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::abrirVentanaEliminarAvion));
     this->subMenuAvion.append(this->menuElmininarAvion);
 
-    this->menuActualizarAvionLista.set_label("Actualizar Lista");
+    this->menuActualizarAvionLista.set_label("Actualizar");
     this->menuActualizarAvionLista.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::abrirVentanaActualizarAvionLista));
     this->subMenuAvion.append(this->menuActualizarAvionLista);
 
-    this->menuActualizarAvionAerolinea.set_label("Actualizar En vuelo");
-    this->menuActualizarAvionAerolinea.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::abrirVEntanaActualizarAvionVuelo));
-    this->subMenuAvion.append(this->menuActualizarAvionAerolinea);
+//    this->menuActualizarAvionAerolinea.set_label("Actualizar En vuelo");
+//    this->menuActualizarAvionAerolinea.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::abrirVEntanaActualizarAvionVuelo));
+//    this->subMenuAvion.append(this->menuActualizarAvionAerolinea);
 
     this->menuBuscarAvion.set_label("Buscar");
     this->menuBuscarAvion.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::abrirVentanaBuscarAvion));
@@ -181,20 +181,20 @@ void VentanaPrincipalAdmin::aboutWinClose() {
 
     this->vActualizarAerolinea = 0;
     this->vActualizarAvionLista = 0;
-    this->vActualizarAvionVuelo = 0;
+//    this->vActualizarAvionVuelo = 0;
     this->vActualizarCiudad = 0;
     this->vActualizarHorario = 0;
     this->vActualizarVuelo = 0;
 }
 
-void VentanaPrincipalAdmin::abrirVEntanaActualizarAvionVuelo() {
-    if (this->vActualizarAvionVuelo != 0)
-        return;
-
-    this->vActualizarAvionVuelo = new VentanaActualizarAvionVuelo();
-    this->vActualizarAvionVuelo->signal_hide().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::aboutWinClose));
-    this->vActualizarAvionVuelo->show();
-}
+//void VentanaPrincipalAdmin::abrirVEntanaActualizarAvionVuelo() {
+//    if (this->vActualizarAvionVuelo != 0)
+//        return;
+//
+//    this->vActualizarAvionVuelo = new VentanaActualizarAvionVuelo();
+//    this->vActualizarAvionVuelo->signal_hide().connect(sigc::mem_fun(*this, &VentanaPrincipalAdmin::aboutWinClose));
+//    this->vActualizarAvionVuelo->show();
+//}
 
 void VentanaPrincipalAdmin::abrirVentanaActualizarAerolinea() {
     if (this->vActualizarAerolinea != 0)
