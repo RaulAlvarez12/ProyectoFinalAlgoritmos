@@ -10,6 +10,7 @@
 
 #include <string.h>
 #include <sstream>
+#include <iostream>
 using namespace std;
 
 template <typename T>
