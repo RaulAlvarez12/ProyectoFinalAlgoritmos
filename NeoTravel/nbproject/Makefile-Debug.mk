@@ -37,11 +37,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Aerolinea.o \
 	${OBJECTDIR}/AerolineaData.o \
+	${OBJECTDIR}/Arista.o \
 	${OBJECTDIR}/Avion.o \
 	${OBJECTDIR}/AvionData.o \
 	${OBJECTDIR}/Ciudad.o \
 	${OBJECTDIR}/CiudadData.o \
 	${OBJECTDIR}/Cola.o \
+	${OBJECTDIR}/DrawingArea.o \
+	${OBJECTDIR}/GrafoListaEnlazada.o \
 	${OBJECTDIR}/Horario.o \
 	${OBJECTDIR}/Itinerario.o \
 	${OBJECTDIR}/Tiquete.o \
@@ -72,8 +75,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/VentanaFactura.o \
 	${OBJECTDIR}/VentanaItinerario.o \
 	${OBJECTDIR}/VentanaLoginAdmin.o \
+	${OBJECTDIR}/VentanaPantallaVuelos.o \
 	${OBJECTDIR}/VentanaPrincipal.o \
 	${OBJECTDIR}/VentanaPrincipalAdmin.o \
+	${OBJECTDIR}/Vertice.o \
 	${OBJECTDIR}/Vuelo.o \
 	${OBJECTDIR}/VueloData.o \
 	${OBJECTDIR}/main.o
@@ -113,6 +118,11 @@ ${OBJECTDIR}/AerolineaData.o: AerolineaData.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AerolineaData.o AerolineaData.cpp
 
+${OBJECTDIR}/Arista.o: Arista.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Arista.o Arista.cpp
+
 ${OBJECTDIR}/Avion.o: Avion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -137,6 +147,16 @@ ${OBJECTDIR}/Cola.o: Cola.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Cola.o Cola.cpp
+
+${OBJECTDIR}/DrawingArea.o: DrawingArea.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DrawingArea.o DrawingArea.cpp
+
+${OBJECTDIR}/GrafoListaEnlazada.o: GrafoListaEnlazada.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GrafoListaEnlazada.o GrafoListaEnlazada.cpp
 
 ${OBJECTDIR}/Horario.o: Horario.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -288,6 +308,11 @@ ${OBJECTDIR}/VentanaLoginAdmin.o: VentanaLoginAdmin.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaLoginAdmin.o VentanaLoginAdmin.cpp
 
+${OBJECTDIR}/VentanaPantallaVuelos.o: VentanaPantallaVuelos.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaPantallaVuelos.o VentanaPantallaVuelos.cpp
+
 ${OBJECTDIR}/VentanaPrincipal.o: VentanaPrincipal.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -297,6 +322,11 @@ ${OBJECTDIR}/VentanaPrincipalAdmin.o: VentanaPrincipalAdmin.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VentanaPrincipalAdmin.o VentanaPrincipalAdmin.cpp
+
+${OBJECTDIR}/Vertice.o: Vertice.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vertice.o Vertice.cpp
 
 ${OBJECTDIR}/Vuelo.o: Vuelo.cpp
 	${MKDIR} -p ${OBJECTDIR}

@@ -14,11 +14,17 @@
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
           <itemPath>Cola.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f2" displayName="Grafo" projectFiles="true">
+          <itemPath>Arista.h</itemPath>
+          <itemPath>GrafoListaEnlazada.h</itemPath>
+          <itemPath>Vertice.h</itemPath>
+        </logicalFolder>
         <itemPath>Aerolinea.h</itemPath>
         <itemPath>Avion.h</itemPath>
         <itemPath>Ciudad.h</itemPath>
         <itemPath>Horario.h</itemPath>
         <itemPath>Itinerario.h</itemPath>
+        <itemPath>ListaEnlazada.h</itemPath>
         <itemPath>ListaEnlazadaCircularDoble.h</itemPath>
         <itemPath>Tiquete.h</itemPath>
         <itemPath>Usuario.h</itemPath>
@@ -62,6 +68,7 @@
             <itemPath>VentanaBuscarVuelo.h</itemPath>
             <itemPath>VentanaEliminarVuelo.h</itemPath>
           </logicalFolder>
+          <itemPath>DrawingArea.h</itemPath>
           <itemPath>VentanaLoginAdmin.h</itemPath>
           <itemPath>VentanaPrincipalAdmin.h</itemPath>
         </logicalFolder>
@@ -89,6 +96,11 @@
       <logicalFolder name="f1" displayName="Domain" projectFiles="true">
         <logicalFolder name="f1" displayName="Cola" projectFiles="true">
           <itemPath>Cola.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="Grafo" projectFiles="true">
+          <itemPath>Arista.cpp</itemPath>
+          <itemPath>GrafoListaEnlazada.cpp</itemPath>
+          <itemPath>Vertice.cpp</itemPath>
         </logicalFolder>
         <itemPath>Aerolinea.cpp</itemPath>
         <itemPath>Avion.cpp</itemPath>
@@ -137,10 +149,13 @@
             <itemPath>VentanaBuscarVuelo.cpp</itemPath>
             <itemPath>VentanaEliminarVuelo.cpp</itemPath>
           </logicalFolder>
+          <itemPath>DrawingArea.cpp</itemPath>
           <itemPath>VentanaLoginAdmin.cpp</itemPath>
           <itemPath>VentanaPrincipalAdmin.cpp</itemPath>
         </logicalFolder>
         <itemPath>VentanaItinerario.cpp</itemPath>
+        <itemPath>VentanaPantallaVuelos.cpp</itemPath>
+        <itemPath>VentanaPantallaVuelos.h</itemPath>
         <itemPath>VentanaPrincipal.cpp</itemPath>
       </logicalFolder>
       <itemPath>main.cpp</itemPath>
@@ -192,6 +207,10 @@
       </item>
       <item path="AerolineaData.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Arista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arista.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Avion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Avion.h" ex="false" tool="3" flavor2="0">
@@ -212,6 +231,14 @@
       </item>
       <item path="Cola.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DrawingArea.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DrawingArea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GrafoListaEnlazada.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GrafoListaEnlazada.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -219,6 +246,8 @@
       <item path="Itinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListaEnlazada.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -336,6 +365,10 @@
       </item>
       <item path="VentanaLoginAdmin.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="VentanaPantallaVuelos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VentanaPantallaVuelos.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VentanaPrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaPrincipal.h" ex="false" tool="3" flavor2="0">
@@ -343,6 +376,10 @@
       <item path="VentanaPrincipalAdmin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaPrincipalAdmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vertice.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vuelo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -385,6 +422,10 @@
       </item>
       <item path="AerolineaData.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Arista.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Arista.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Avion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Avion.h" ex="false" tool="3" flavor2="0">
@@ -405,6 +446,14 @@
       </item>
       <item path="Cola.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DrawingArea.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DrawingArea.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GrafoListaEnlazada.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GrafoListaEnlazada.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Horario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Horario.h" ex="false" tool="3" flavor2="0">
@@ -412,6 +461,8 @@
       <item path="Itinerario.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Itinerario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListaEnlazada.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ListaEnlazadaCircularDoble.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -529,6 +580,10 @@
       </item>
       <item path="VentanaLoginAdmin.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="VentanaPantallaVuelos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VentanaPantallaVuelos.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VentanaPrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaPrincipal.h" ex="false" tool="3" flavor2="0">
@@ -536,6 +591,10 @@
       <item path="VentanaPrincipalAdmin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VentanaPrincipalAdmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vertice.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Vuelo.cpp" ex="false" tool="1" flavor2="0">
       </item>
