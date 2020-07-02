@@ -44,7 +44,7 @@ void VentanaAgregarAerolinea::onButtonClickedIngresar() {
     Gtk::MessageDialog dialogo(*this, "Aerolinea Agregada:", false, Gtk::MESSAGE_INFO);
     dialogo.set_secondary_text( aerolineaData->getInstance()->firstInList()->toString());
     dialogo.run();
-    this->lblNombre.set_label("");
+    this->etNombre.set_text("");
     
     
 }

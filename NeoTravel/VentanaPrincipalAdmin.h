@@ -45,7 +45,7 @@ void init();
     void abrirVentanaAgregarAvion();
     void abrirVentanaEliminarAvion();
     void abrirVentanaActualizarAvionLista();
-    void abrirVEntanaActualizarAvionVuelo();
+//    void abrirVEntanaActualizarAvionVuelo();
     void abrirVentanaBuscarAvion();
 
     void abrirVentanaAgregarAerolinea();
@@ -142,7 +142,7 @@ void init();
     
     VentanaActualizarAerolinea* vActualizarAerolinea;
     VentanaActualizarAvionLista* vActualizarAvionLista;
-    VentanaActualizarAvionVuelo* vActualizarAvionVuelo;
+//    VentanaActualizarAvionVuelo* vActualizarAvionVuelo;
     VentanaActualizarCiudad* vActualizarCiudad;
     VentanaActualizarHorario* vActualizarHorario;
     VentanaActualizarVuelo* vActualizarVuelo;
