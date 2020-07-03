@@ -236,6 +236,22 @@ public:
         }
         return s.str();
     }//toString
+    
+    string toStringV2(){
+        stringstream s;
+        if (!isEmpty()) {
+            ptrLista aux;
+            aux = inicio;
+
+            s << aux->elemento->mostrarVuelosActivos();
+            aux = aux->sgte;
+            while (aux != inicio) {
+                s << aux->elemento->mostrarVuelosActivos();
+                aux = aux->sgte;
+            }
+        }
+        return s.str();
+    }
 
     void invertirLista() {
         ptrLista aux;

@@ -26,6 +26,7 @@ public:
     Ciudad* getciudadDestino();
     void setciudadDestino(Ciudad* ciudadDestino);
     string toString();
+    string mostrarVuelosActivos();
 
 private:
     Itinerario* itinerario;

@@ -13,6 +13,7 @@ VentanaPrincipal::VentanaPrincipal() {
     this->ventanaescoger = 0;
     this->ventanaItinerario = 0;
     this->ventanaLogin = 0;
+    this->ventanaPantallaVuelos = 0;
 }//constructor
 
 VentanaPrincipal::~VentanaPrincipal() {
@@ -46,14 +47,17 @@ void VentanaPrincipal::init() {
     this->menuArchivo.set_label("Usuario");
     this->menuItinerario.set_label("Itinerarios");
     this->menuAdministrativo.set_label("Administracion");
+    this->menuPantallaVuelos.set_label("Pantalla vuelos");
 
     this->menuBar.append(this->menuArchivo);
     this->menuBar.append(this->menuItinerario);
     this->menuBar.append(this->menuAdministrativo);
+    this->menuBar.append(this->menuPantallaVuelos);
 
     this->menuArchivo.set_submenu(this->subMenuArchivo);
     this->menuItinerario.set_submenu(this->subMenuItinerario);
     this->menuAdministrativo.set_submenu(this->subMenuAdministrativo);
+    this->menuPantallaVuelos.set_submenu(this->subMenuPantallaVuelos);
 
     //agrega submenu a la barra y le asigna una accion
     this->menuEscogerAerolinea.set_label("Comprar Tiquete");
@@ -67,6 +71,10 @@ void VentanaPrincipal::init() {
     this->menuItemAvion.set_label("Modulo Admin");
     this->menuItemAvion.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaLogin));
     this->subMenuAdministrativo.append(this->menuItemAvion);
+    
+    this->menuItemPantallaVuelos.set_label("Vuelos activos");
+    this->menuItemPantallaVuelos.signal_activate().connect(sigc::mem_fun(*this, &VentanaPrincipal::abrirVentanaPantallaVuelos));
+    this->subMenuPantallaVuelos.append(this->menuItemPantallaVuelos);
 
     this->add(fixed);
     this->show_all_children();
@@ -82,6 +90,10 @@ void VentanaPrincipal::aboutWinCloseVentanaItinerarios() {
 
 void VentanaPrincipal::aboutWinCloseVentanaLogin() {
     this->ventanaLogin = 0;
+}
+
+void VentanaPrincipal::aboutWinCloseVentanaPantallaVuelos() {
+    this->ventanaPantallaVuelos = 0;
 }
 
 void VentanaPrincipal::abrirVentanaLogin() {
@@ -110,3 +122,12 @@ void VentanaPrincipal::abrirVentanaItinerario() {
     this->ventanaItinerario->signal_hide().connect(sigc::mem_fun(*this, &VentanaPrincipal::aboutWinCloseVentanaItinerarios));
     this->ventanaItinerario->show();
 }//abrirVentanaItinerario
+
+void VentanaPrincipal::abrirVentanaPantallaVuelos() {
+    if (this->ventanaPantallaVuelos != 0)
+        return;
+
+    this->ventanaPantallaVuelos = new VentanaPantallaVuelos();
+    this->ventanaPantallaVuelos->signal_hide().connect(sigc::mem_fun(*this, &VentanaPrincipal::aboutWinCloseVentanaPantallaVuelos));
+    this->ventanaPantallaVuelos->show();
+}

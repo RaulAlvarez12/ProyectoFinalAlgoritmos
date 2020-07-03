@@ -51,3 +51,10 @@ string Vuelo::toString() {
     s << "\nItinerario: " << this->itinerario->toString();
     return s.str();
 }//toString
+
+string Vuelo::mostrarVuelosActivos() {
+    stringstream s;
+    s << "Vuelo: " << getCiudadOrigen()->toString() << " a " << getciudadDestino()->toString() << "\n";
+    s <<  this->itinerario->getColaPrioridad()->mostrarVuelosActivos();
+    return s.str();
+}

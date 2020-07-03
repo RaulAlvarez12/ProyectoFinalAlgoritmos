@@ -29,6 +29,7 @@ public:
     Vuelo* firstInList();
     Vuelo* buscarVuelo(string cOrigen,string cDestino);
     string toString();
+    string mostrarVuelosActivos();
 
 private:
 

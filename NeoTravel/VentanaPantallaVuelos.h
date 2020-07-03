@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaPantallaVuelos.h
  * Author: alsov
@@ -9,13 +8,28 @@
 #ifndef VENTANAPANTALLAVUELOS_H
 #define VENTANAPANTALLAVUELOS_H
 
-class VentanaPantallaVuelos {
+#include <gtkmm.h>
+
+#include "AerolineaData.h"
+
+using namespace std;
+
+class VentanaPantallaVuelos : public Gtk::Window{
 public:
     VentanaPantallaVuelos();
-    VentanaPantallaVuelos(const VentanaPantallaVuelos& orig);
     virtual ~VentanaPantallaVuelos();
+    
 private:
 
+    void init();
+    
+    //Atributos
+    Gtk::Fixed fixed;
+    Gtk::Label lblTitulo;
+    Gtk::Label lblVuelos;
+    
+    AerolineaData* aerolineaData;
+    Aerolinea* aerolineaActual;
 };
 
 #endif /* VENTANAPANTALLAVUELOS_H */

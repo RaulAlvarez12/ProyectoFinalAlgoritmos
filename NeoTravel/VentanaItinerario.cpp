@@ -12,7 +12,6 @@ VentanaItinerario::VentanaItinerario() {
     this->set_size_request(800, 300);
     this->set_title("Itinerarios ");
     init();
-    this->show_all_children();
 }//Constructor
 
 
