@@ -63,3 +63,21 @@ Aerolinea* AerolineaData::buscarAerolinea(string aerolinea) {
         }
     }
 }
+
+string AerolineaData::mostrarVuelosActivos() {
+    stringstream s;
+    if (!ListaAerolineas->isEmpty()) {
+
+        Aerolinea* aux = ListaAerolineas->firstInlist();
+        s <<  aux->getNombre() << ": " << aux->vueloData->mostrarVuelosActivos();
+        aux = ListaAerolineas->obtenerSiguiente(aux);
+        while (aux != ListaAerolineas->firstInlist()) {
+            s << aux->getNombre() << ": " << aux->vueloData->mostrarVuelosActivos();
+            aux = ListaAerolineas->obtenerSiguiente(aux);
+        }
+        return s.str();
+    } else {
+        s << "La lista de aerolineas esta vacia";
+        return s.str();
+    }
+}

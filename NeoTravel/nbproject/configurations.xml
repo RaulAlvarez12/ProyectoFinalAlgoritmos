@@ -73,6 +73,7 @@
           <itemPath>VentanaPrincipalAdmin.h</itemPath>
         </logicalFolder>
         <itemPath>VentanaItinerario.h</itemPath>
+        <itemPath>VentanaPantallaVuelos.h</itemPath>
         <itemPath>VentanaPrincipal.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Pruebas" projectFiles="true">
@@ -155,7 +156,6 @@
         </logicalFolder>
         <itemPath>VentanaItinerario.cpp</itemPath>
         <itemPath>VentanaPantallaVuelos.cpp</itemPath>
-        <itemPath>VentanaPantallaVuelos.h</itemPath>
         <itemPath>VentanaPrincipal.cpp</itemPath>
       </logicalFolder>
       <itemPath>main.cpp</itemPath>

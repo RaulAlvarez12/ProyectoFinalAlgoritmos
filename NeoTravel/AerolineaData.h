@@ -8,6 +8,9 @@
 #ifndef AEROLINEADATA_H
 #define AEROLINEADATA_H
 #include <iostream>
+#include <string.h>
+#include <sstream>
+#include <ctime>
 
 #include "Aerolinea.h"
 #include "ListaEnlazadaCircularDoble.h"
@@ -26,6 +29,7 @@ public:
     Aerolinea* firstInList();
     Aerolinea* buscarAerolinea(string aerolinea);
     void mostrar();
+    string mostrarVuelosActivos();
     
     GrafoListaEnlazada* grafo;
     

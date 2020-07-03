@@ -266,71 +266,89 @@ void Cola::definePrioridad() {
 }//definePrioridad
 
 Horario* Cola::obtenerAnteriorHorario(Horario* horario) {
-    if(horario==anterior->horario){
+    if (horario == anterior->horario) {
         return posterior->horario;
-    }else {
+    } else {
         Horario* horarioAux;
         Cola* colaAux = new Cola();
-        Horario* horarioAnterior = new Horario(0,0);
-        while(!isEmpty()){
+        Horario* horarioAnterior = new Horario(0, 0);
+        while (!isEmpty()) {
             horarioAux = desencolar();
-            if(horario==horarioAux){
-                horarioAnterior=colaAux->posterior->horario;
-                
+            if (horario == horarioAux) {
+                horarioAnterior = colaAux->posterior->horario;
+
             }
             colaAux->encolar(horarioAux);
-            
+
         }
-        while(!colaAux->isEmpty()){
+        while (!colaAux->isEmpty()) {
             encolar(colaAux->desencolar());
         }
-        
-        
+
+
         return horarioAnterior;
     }
 }
 
 Horario* Cola::obtenerSiguienteHorario(Horario* horario) {
-   
-    if(horario==posterior->horario){
+
+    if (horario == posterior->horario) {
         return anterior->horario;
-    }else{
+    } else {
         Horario* horarioAux;
         Cola* colaAux = new Cola();
-        Horario* horarioSiguiente = new Horario(0,0);
-        while(!isEmpty()){
+        Horario* horarioSiguiente = new Horario(0, 0);
+        while (!isEmpty()) {
             horarioAux = desencolar();
             colaAux->encolar(horarioAux);
-            if(horario==horarioAux){
-                horarioSiguiente=desencolar();
+            if (horario == horarioAux) {
+                horarioSiguiente = desencolar();
                 colaAux->encolar(horarioSiguiente);
             }
-            
+
         }
-        while(!colaAux->isEmpty()){
+        while (!colaAux->isEmpty()) {
             encolar(colaAux->desencolar());
         }
-        
+
         return horarioSiguiente;
     }
-    
+
 }
 
 void Cola::eliminar(Horario* horario) {
 
-        Horario* horarioAux;
-        Cola* colaAux = new Cola();
-        while(!isEmpty()){
-            horarioAux = desencolar();
-            if(horario!=horarioAux){
-              colaAux->encolar(horarioAux);
-            }
-            
-            
+    Horario* horarioAux;
+    Cola* colaAux = new Cola();
+    while (!isEmpty()) {
+        horarioAux = desencolar();
+        if (horario != horarioAux) {
+            colaAux->encolar(horarioAux);
         }
-        while(!colaAux->isEmpty()){
-            encolar(colaAux->desencolar());
-        }
-        
+
+
+    }
+    while (!colaAux->isEmpty()) {
+        encolar(colaAux->desencolar());
     }
 
+}
+
+string Cola::mostrarVuelosActivos() {
+
+    time_t curr_time;
+    curr_time = time(NULL);
+    tm *tm_local = localtime(&curr_time);
+
+    ptrCola recorrido = anterior;
+    stringstream s;
+    while (recorrido != NULL) {
+        if (recorrido->horario->getHoraSalida() >= tm_local->tm_hour || recorrido->horario->getHoraLlegada() >= tm_local->tm_hour) {
+            s << recorrido->horario->toString() << "\n";
+            recorrido = recorrido->sgte;
+        } else {
+            recorrido = recorrido->sgte;
+        }
+    }
+    return s.str();
+}

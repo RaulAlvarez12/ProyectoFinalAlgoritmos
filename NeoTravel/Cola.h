@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <ctime>
 
 #include "Horario.h"
 
@@ -45,6 +46,7 @@ public:
     Horario* obtenerSiguienteHorario(Horario* horario);
     Horario* obtenerAnteriorHorario(Horario* horario);
     void eliminar(Horario* horario);
+    string mostrarVuelosActivos();
     
 
 private:
