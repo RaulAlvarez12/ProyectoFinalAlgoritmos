@@ -20,6 +20,7 @@ VentanaItinerario::~VentanaItinerario() {
 }//destructor
 
 void VentanaItinerario::init(){
+    if(!this->aerolineaData->getInstance()->obtenerListaDeAerolineas()->isEmpty()){
     this->aerolineaActual = aerolineaData->getInstance()->firstInList();
     this->vueloActual = aerolineaActual->vueloData->firstInList();
     
@@ -57,6 +58,12 @@ void VentanaItinerario::init(){
     
     this->add(fixed);
     this->show_all_children();
+    }else {
+        this->lblAerolinea.set_text("No hay datos registrados");
+        this->fixed.put(this->lblAerolinea, 20, 20);
+        this->add(fixed);
+        this->show_all_children();
+    }
 }//init
 
 void VentanaItinerario::onButtonClickedIzqAerolinea(){

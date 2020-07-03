@@ -9,9 +9,13 @@
 #define VENTANAELIMINARCIUDAD_H
 
 #include <gtkmm.h>
+#include <iostream>
 
 #include "Ciudad.h"
 #include "CiudadData.h"
+#include "AerolineaData.h"
+
+using namespace std;
 
 class VentanaEliminarCiudad : public Gtk::Window {
 public:
@@ -38,6 +42,7 @@ private:
 
     Ciudad* ciudadActual;
     CiudadData* ciudadData;
+    AerolineaData* aerolineaData;
 
 };
 

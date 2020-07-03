@@ -91,3 +91,9 @@ void Vertice::draw(const Cairo::RefPtr<Cairo::Context>& cr) {
     cr->stroke();
 
 }
+
+string Vertice::toString() {
+    stringstream s;
+    s << getElemento()->getNombre();
+    return s.str();
+}

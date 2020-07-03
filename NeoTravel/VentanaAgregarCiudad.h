@@ -8,9 +8,13 @@
 #ifndef VENTANAAGREGARCIUDAD_H
 #define VENTANAAGREGARCIUDAD_H
 #include <gtkmm.h>
+#include <iostream>
 
 #include "Ciudad.h"
 #include "CiudadData.h"
+#include "AerolineaData.h"
+
+using namespace std;
 
 class VentanaAgregarCiudad : public Gtk::Window{
 public:
@@ -33,6 +37,7 @@ private:
     Gtk::Button btnGuardar;
     
     CiudadData* ciudadData;
+    AerolineaData* aerolineaData;
 };
 
 #endif /* VENTANAAGREGARCIUDAD_H */

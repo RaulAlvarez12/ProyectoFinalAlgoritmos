@@ -9,6 +9,8 @@
 #ifndef VERTICE_H
 #define VERTICE_H
 
+#include <string.h>
+#include <sstream>
 #include <unistd.h>
 #include <cairomm-1.0/cairomm/refptr.h>
 #include <cairomm-1.0/cairomm/context.h>

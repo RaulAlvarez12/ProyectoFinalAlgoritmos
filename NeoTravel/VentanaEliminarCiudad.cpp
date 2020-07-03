@@ -73,6 +73,9 @@ void VentanaEliminarCiudad::onButtonClickedEliminar() {
         dialogo.set_secondary_text(ciudadActual->toString());
         dialogo.run();
         ciudadData->getInstance()->eliminarCiudad(ciudadActual);
+        cout << this->aerolineaData->getInstance()->grafo->toString() << endl;
+        this->aerolineaData->getInstance()->grafo->borrarVertice(new Vertice(ciudadActual));
+        cout << this->aerolineaData->getInstance()->grafo->toString() << endl;
         if (!(ciudadData->getInstance()->obtenerListaDeCiudades()->isEmpty())) {
             ciudadActual = ciudadData->getInstance()->firstInList();
             this->lblCiudad.set_label(ciudadActual->toString());

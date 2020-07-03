@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaActualizarHorario.h
  * Author: geraldi

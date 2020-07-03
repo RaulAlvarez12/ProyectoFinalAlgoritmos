@@ -1,4 +1,3 @@
-
 /* 
  * File:   VentanaAgregarVuelo.cpp
  * Author: geraldi
@@ -135,6 +134,8 @@ void VentanaAgregarVuelo::onButtonClickedAgregar() {
     itinerario->setAvion(this->avionActual);
     Vuelo* vuelo = new Vuelo(itinerario, ciudadOactual, ciudadDactual);
     this->aerolineaActual->vueloData->insertarVuelo(vuelo);
+    this->aerolineaData->getInstance()->grafo->agregarArista(new Vertice(vuelo->getCiudadOrigen()), new Vertice(vuelo->getciudadDestino()));
+    cout << this->aerolineaData->getInstance()->grafo->toString() << endl;
     Gtk::MessageDialog dialogo(*this, "Registro exitoso:", false, Gtk::MESSAGE_INFO);
         dialogo.set_secondary_text(aerolineaActual->vueloData->firstInList()->toString());
         dialogo.run();
