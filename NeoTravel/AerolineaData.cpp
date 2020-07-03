@@ -7,11 +7,11 @@
 
 #include "AerolineaData.h"
 
-AerolineaData* AerolineaData::instance=NULL;
+AerolineaData* AerolineaData::instance = NULL;
 
 AerolineaData::AerolineaData() {
-ListaAerolineas = new ListaEnlazadaCircularDoble<Aerolinea>;
-
+    ListaAerolineas = new ListaEnlazadaCircularDoble<Aerolinea>;
+    grafo = new GrafoListaEnlazada();
 }
 
 AerolineaData* AerolineaData::getInstance() {
@@ -51,13 +51,13 @@ Aerolinea* AerolineaData::firstInList() {
 }
 
 Aerolinea* AerolineaData::buscarAerolinea(string aerolinea) {
-Aerolinea* aux = ListaAerolineas->firstInlist();
-    if(aux->getNombre().compare(aerolinea)==0){
+    Aerolinea* aux = ListaAerolineas->firstInlist();
+    if (aux->getNombre().compare(aerolinea) == 0) {
         return aux;
-    }else{
-        while(aux!=ListaAerolineas->firstInlist()){
-            aux=ListaAerolineas->obtenerSiguiente(aux);
-            if(aux->getNombre().compare(aerolinea)==0){
+    } else {
+        while (aux != ListaAerolineas->firstInlist()) {
+            aux = ListaAerolineas->obtenerSiguiente(aux);
+            if (aux->getNombre().compare(aerolinea) == 0) {
                 return aux;
             }
         }

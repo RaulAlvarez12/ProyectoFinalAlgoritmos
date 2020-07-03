@@ -17,37 +17,44 @@ VentanaBuscarAerolinea::VentanaBuscarAerolinea() {
 }
 
 void VentanaBuscarAerolinea::init() {
-    this->aerolineaActual = aerolineaData->getInstance()->firstInList();
+    if (!this->aerolineaData->getInstance()->obtenerListaDeAerolineas()->isEmpty()) {
+        this->aerolineaActual = aerolineaData->getInstance()->firstInList();
 
-    this->lblAerolinea.set_label("Aerolinea");
-    this->fixed.put(this->lblAerolinea, 70, 20);
-    this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
-    this->fixed.put(this->lblAerolineaActual, 80, 50);
+        this->lblAerolinea.set_label("Aerolinea");
+        this->fixed.put(this->lblAerolinea, 70, 20);
+        this->lblAerolineaActual.set_label(aerolineaActual->getNombre());
+        this->fixed.put(this->lblAerolineaActual, 80, 50);
 
-    this->btnIzqAerolinea.set_label("<-");
-    this->btnIzqAerolinea.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedIzqAerolinea));
-    this->fixed.put(this->btnIzqAerolinea, 50, 100);
+        this->btnIzqAerolinea.set_label("<-");
+        this->btnIzqAerolinea.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedIzqAerolinea));
+        this->fixed.put(this->btnIzqAerolinea, 50, 100);
 
-    this->btnDerAerolinea.set_label("->");
-    this->btnDerAerolinea.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedDerAerolinea));
-    this->fixed.put(this->btnDerAerolinea, 120, 100);
+        this->btnDerAerolinea.set_label("->");
+        this->btnDerAerolinea.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedDerAerolinea));
+        this->fixed.put(this->btnDerAerolinea, 120, 100);
 
-    this->btnEliminar.set_label("Buscar");
-    this->btnEliminar.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedBuscar));
-    this->fixed.put(this->btnEliminar, 110, 140);
-    this->lblData.set_text("Informacion:\n");
-    this->fixed.put(this->lblData, 25, 190);
+        this->btnEliminar.set_label("Buscar");
+        this->btnEliminar.signal_clicked().connect(sigc::mem_fun(*this, &VentanaBuscarAerolinea::onButtonClickedBuscar));
+        this->fixed.put(this->btnEliminar, 110, 140);
+        this->lblData.set_text("Informacion:\n");
+        this->fixed.put(this->lblData, 25, 190);
 
-    this->add(fixed);
-    this->show_all_children();
+        this->add(fixed);
+        this->show_all_children();
+    } else {
+        this->lblAerolinea.set_text("No hay datos registrados");
+        this->fixed.put(this->lblAerolinea, 20, 20);
+        this->add(fixed);
+        this->show_all_children();
+    }
 }
 
 void VentanaBuscarAerolinea::onButtonClickedBuscar() {
-     this->lblData.set_text("Informacion:\n" + aerolineaActual->toString());
+    this->lblData.set_text("Informacion:\n" + aerolineaActual->toString());
 }
 
 void VentanaBuscarAerolinea::onButtonClickedDerAerolinea() {
-    
+
     this->lblData.set_text("Informacion:\n");
     aerolineaActual = aerolineaData->getInstance()->obtenerSiguiente(aerolineaActual);
     this->lblAerolineaActual.set_label(aerolineaActual->getNombre());

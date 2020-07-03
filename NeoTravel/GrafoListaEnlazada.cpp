@@ -1,4 +1,3 @@
-
 /* 
  * File:   GrafoListaEnlazada.cpp
  * Author: alsov
@@ -90,10 +89,10 @@ void GrafoListaEnlazada::borrarArista(Arista* arista) {
 
 bool GrafoListaEnlazada::existeArista(Arista* arista) {
 
-   
-    
-    
-    
+
+
+
+
 
 }
 
@@ -152,6 +151,24 @@ void GrafoListaEnlazada::setVertices(vector<Vertice*> vertices) {
 
     this->vertices = vertices;
 
+}
+
+void GrafoListaEnlazada::borrarVertice(Vertice* vertice) {
+    vector<Vertice*> aux;
+    while (!this->vertices.empty()) {
+        if (strcmp(this->vertices.back()->getElemento()->getNombre().c_str(), vertice->getElemento()->getNombre().c_str()) == 0) {
+            cout << "Elemento por BORRAR DEL VECTOR ORIGINAL: " << this->vertices.back()->toString() << endl;
+            this->vertices.pop_back();
+        } else {
+            cout << "Elemento por guardar en el aux: " << this->vertices.back()->toString() << endl;
+            aux.push_back((Vertice*)this->vertices.back());
+            this->vertices.pop_back();
+        }
+    }
+    while (!aux.empty()) {
+        this->vertices.push_back((Vertice*)aux.back());
+        aux.pop_back();
+    }
 }
 
 string GrafoListaEnlazada::toString() {

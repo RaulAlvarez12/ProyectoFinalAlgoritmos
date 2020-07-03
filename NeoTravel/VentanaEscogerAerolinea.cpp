@@ -22,6 +22,7 @@ VentanaEscogerAerolinea::~VentanaEscogerAerolinea() {
 }
 
 void VentanaEscogerAerolinea::init() {
+    if(!this->aerolineaData->getInstance()->obtenerListaDeAerolineas()->isEmpty()){
     this->aerolineaActual =aerolineaData->getInstance()->firstInList();
     
     this->lblBienvenido.set_label("Bienvenido Escoja su aerolinea preferida");
@@ -46,6 +47,12 @@ void VentanaEscogerAerolinea::init() {
     
     this->add(fixed);
     this->show_all_children();
+    }else {
+        this->lblAerolineaInfo.set_text("No hay datos registrados");
+        this->fixed.put(this->lblAerolineaInfo, 20 , 20);
+        this->add(fixed);
+        this->show_all_children();
+    }
 }
 
 void VentanaEscogerAerolinea::onButtonClickedArriba() {

@@ -11,6 +11,7 @@
 
 #include "Aerolinea.h"
 #include "ListaEnlazadaCircularDoble.h"
+#include "GrafoListaEnlazada.h"
 
 using namespace std;
 
@@ -25,6 +26,9 @@ public:
     Aerolinea* firstInList();
     Aerolinea* buscarAerolinea(string aerolinea);
     void mostrar();
+    
+    GrafoListaEnlazada* grafo;
+    
 protected:
     AerolineaData();
     

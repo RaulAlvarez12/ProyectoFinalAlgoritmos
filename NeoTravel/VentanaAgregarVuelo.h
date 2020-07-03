@@ -8,6 +8,7 @@
 #ifndef VENTANAAGREGARVUELO_H
 #define VENTANAAGREGARVUELO_H
 #include <gtkmm.h>
+#include <iostream>
 
 #include "Ciudad.h"
 #include "Aerolinea.h"
@@ -17,6 +18,8 @@
 #include "CiudadData.h"
 #include "Vuelo.h"
 #include "Itinerario.h"
+
+using namespace std;
 
 class VentanaAgregarVuelo : public Gtk::Window{
 public:

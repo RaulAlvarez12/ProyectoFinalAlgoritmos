@@ -9,8 +9,8 @@
 
 Itinerario::Itinerario() {
     this->colaPrioridad = new Cola();
-    colaPrioridad->encolar(new Horario(7,8));
-    this->avion = new Avion();
+    //colaPrioridad->encolar(new Horario(7,8));
+    //this->avion = new Avion();
 }
 
 Itinerario::Itinerario(Avion* avion, Cola* colaPrioridad) {

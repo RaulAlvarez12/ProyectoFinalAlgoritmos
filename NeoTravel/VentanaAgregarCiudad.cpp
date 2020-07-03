@@ -35,6 +35,8 @@ void VentanaAgregarCiudad::init() {
 void VentanaAgregarCiudad::onButtonClickedGuardar() {
     if (strcmp(this->etNombreCiudad.get_text().c_str(), "") != 0) {
         ciudadData->getInstance()->agregarCiudad(new Ciudad(this->etNombreCiudad.get_text().c_str()));
+        aerolineaData->getInstance()->grafo->agregarVertice(new Vertice(this->ciudadData->getInstance()->firstInList()));
+        cout << aerolineaData->getInstance()->grafo->toString() << endl;
         Gtk::MessageDialog dialogo(*this, "Registro exitoso:", false, Gtk::MESSAGE_INFO);
         dialogo.set_secondary_text(ciudadData->getInstance()->firstInList()->toString());
         dialogo.run();

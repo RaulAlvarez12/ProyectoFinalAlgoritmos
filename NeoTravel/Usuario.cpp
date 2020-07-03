@@ -80,6 +80,6 @@ void Usuario::compruebaPermiso(string ciudadDestino) {
 string Usuario::toString() {
     stringstream s;
     s << "\nInformacion Usuario\nNombre: " << this->nombre << "\nEdad: " << this->edad << "\nGenero: " << this->genero
-            << "\nNumero de pasaporte: " << this->numeroPasaporte << "\nNacionalidad: " << this->nacionalidad << "\nPermiso de ingreso: " << this->permisoIngreso;
+            << "\nNumero de pasaporte: " << this->numeroPasaporte << "\nNacionalidad: " << this->nacionalidad;
     return s.str();
 }

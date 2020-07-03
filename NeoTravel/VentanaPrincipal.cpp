@@ -20,26 +20,26 @@ VentanaPrincipal::~VentanaPrincipal() {
 
 void VentanaPrincipal::init() {
 
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("okland"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("newPort"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("Estados Unidos"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("Costa Rica"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("Mexico"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("China"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("España"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("Colombia"));
-    ciudadData->getInstance()->agregarCiudad(new Ciudad("San Jose"));
-
-    avionData->getInstance()->agregarAvion(new Avion("Boeing 777", 120, 27, 722));
-    avionData->getInstance()->agregarAvion(new Avion("Boeing 767", 300, 74, 172));
-    avionData->getInstance()->agregarAvion(new Avion("Boeing 539", 200, 37, 782));
-    avionData->getInstance()->agregarAvion(new Avion("Cessna", 20, 97, 729));
-
-    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Copa"));
-    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Emirates"));
-    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("American"));
-    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Qatar"));
-    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Avianca"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("okland"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("newPort"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("Estados Unidos"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("Costa Rica"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("Mexico"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("China"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("España"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("Colombia"));
+//    ciudadData->getInstance()->agregarCiudad(new Ciudad("San Jose"));
+//
+//    avionData->getInstance()->agregarAvion(new Avion("Boeing 777", 120, 27, 722));
+//    avionData->getInstance()->agregarAvion(new Avion("Boeing 767", 300, 74, 172));
+//    avionData->getInstance()->agregarAvion(new Avion("Boeing 539", 200, 37, 782));
+//    avionData->getInstance()->agregarAvion(new Avion("Cessna", 20, 97, 729));
+//
+//    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Copa"));
+//    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Emirates"));
+//    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("American"));
+//    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Qatar"));
+//    aerolineaData->getInstance()->agregarAerolinea(new Aerolinea("Avianca"));
 
 
     this->fixed.put(menuBar, 0, 0); // se agrega el menuBar al contenedor fixed

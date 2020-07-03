@@ -1,4 +1,3 @@
-
 /* 
  * File:   GrafoListaEnlazada.h
  * Author: alsov
@@ -14,6 +13,7 @@
 #include "Arista.h"
 #include <string.h>
 #include <sstream>
+#include <iostream>
 
 using namespace std;
 
@@ -31,6 +31,7 @@ public:
     bool existeVertice(Vertice* vertice);
     bool existeArista(Arista* arista);
     void borrarArista(Arista* arista);
+    void borrarVertice(Vertice* vertice);
     bool isEmpty();
     int getPosicion(Vertice* vertice);
     string toString();
@@ -58,4 +59,3 @@ private:
 };
 
 #endif /* GRAFOLISTAENLAZADA_H */
-
